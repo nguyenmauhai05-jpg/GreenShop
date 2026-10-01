@@ -1,0 +1,7 @@
+/* GreenShop home page component styles. Shared header/footer live in site-shell.css. */ @import './home/hero.css';
+@import './home/categories.css';
+@import './home/best-sellers.css';
+@import './home/promotion.css';
+@import './home/benefits.css';
+@import './home/new-arrivals.css';
+@import './home/testimonials.css';

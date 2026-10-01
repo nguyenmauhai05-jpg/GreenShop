@@ -1,0 +1,80 @@
+/* =========================================================
+   GREENSHOP - SHARED PAGINATION
+========================================================= */
+.gs-pagination {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: 12px;
+    padding-top: 14px;
+    border-top: 1px solid #e3e9e1;
+}
+.gs-page-btn {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 34px;
+    border: 1px solid #dce5dd;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #26352b;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+}
+.gs-page-btn:hover:not(.is-disabled):not(.is-active) {
+    border-color: #94c49e;
+    color: #16863a;
+    background: #f5faf6;
+    transform: translateY(-1px);
+}
+.gs-page-btn.is-active {
+    border-color: #2f8c3d;
+    background: #2f8c3d;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(47, 140, 61, .14);
+}
+.gs-page-btn.is-disabled {
+    color: #c4cec6;
+    background: #fbfcfb;
+    cursor: default;
+}
+.gs-page-btn svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.gs-page-dots {
+    min-width: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #7a867e;
+    font-size: 11px;
+    line-height: 1;
+}
+@media (max-width: 650px) {
+    .gs-pagination {
+        justify-content: center;
+        gap: 4px;
+        margin-top: 14px;
+        padding-top: 12px;
+    }
+    .gs-page-btn {
+        width: 32px;
+        height: 32px;
+        flex-basis: 32px;
+        border-radius: 8px;
+        font-size: 13px;
+    }
+}

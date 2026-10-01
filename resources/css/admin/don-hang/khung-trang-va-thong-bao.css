@@ -1,0 +1,90 @@
+/* =========================================================
+   Khung trang, thông báo và thanh công cụ
+========================================================= */
+.order-admin-page {
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    color:#243128
+}
+.admin-order-alert {
+    padding:12px 15px;
+    border-radius:8px;
+    border:1px solid;
+    font-size:13px
+}
+.admin-order-alert.success {
+    background:#eef9f1;
+    border-color:#b8dfc1;
+    color:#187a36
+}
+.admin-order-alert.warning {
+    background:#fff8e8;
+    border-color:#f1d796;
+    color:#9a6c00
+}
+.admin-order-alert.error {
+    background:#fff0f0;
+    border-color:#edbebe;
+    color:#b33333
+}
+.order-toolbar {
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:16px
+}
+.order-toolbar-search {
+    flex:1;
+    max-width:560px
+}
+.order-toolbar-search form {
+    display:flex;
+    height:42px;
+    border:1px solid #dfe8e1;
+    border-radius:8px;
+    background:#fff;
+    overflow:hidden
+}
+.order-toolbar-search .search-icon {
+    width:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#819087
+}
+.order-toolbar-search input {
+    flex:1;
+    border:0;
+    outline:0;
+    padding:0 8px
+}
+.order-toolbar-search button {
+    border:0;
+    border-left:1px solid #e4ebe5;
+    background:#fff;
+    padding:0 15px;
+    cursor:pointer;
+    color:#218341
+}
+.order-export-actions {
+    display:flex;
+    gap:10px
+}
+.btn-export {
+    height:40px;
+    padding:0 14px;
+    display:flex;
+    align-items:center;
+    gap:7px;
+    border:1px solid #dbe6dd;
+    border-radius:8px;
+    background:#fff;
+    color:#294b34;
+    font-size:13px;
+    font-weight:600
+}
+.btn-export:hover {
+    border-color:#86c497;
+    color:#16883a
+}

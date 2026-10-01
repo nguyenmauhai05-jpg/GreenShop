@@ -1,0 +1,91 @@
+/* =========================================================
+   THANH TOÁN - DANH SÁCH SẢN PHẨM ĐẶT MUA
+========================================================= */
+/* =========================================================
+   1. BỐ CỤC CHUNG
+   Chia thành 4 cột:
+   Sản phẩm | Đơn giá | Số lượng | Thành tiền
+========================================================= */
+.checkout-products-head, .checkout-product-row {
+    display: grid;
+    grid-template-columns: minmax(270px, 1fr) 120px 90px 120px;
+    align-items: center;
+}
+/* =========================================================
+   2. HÀNG TIÊU ĐỀ
+========================================================= */
+.checkout-products-head {
+    min-height: 34px;
+    padding: 0 16px;
+    background: #fbfcfb;
+    color: #9aa49c;
+    font-size: 8px;
+}
+/* Các tiêu đề từ cột thứ 2 trở đi căn phải */
+.checkout-products-head span:not(:first-child) {
+    text-align: right;
+}
+/* Dịch riêng chữ "Số lượng" sang trái */
+.checkout-products-head > *:nth-child(3) {
+    transform: translateX(-25px);
+}
+/* =========================================================
+   3. TỪNG DÒNG SẢN PHẨM
+========================================================= */
+.checkout-product-row {
+    min-height: 80px;
+    padding: 11px 16px;
+    border-top: 1px solid #f0f2f0;
+    color: #59655d;
+    font-size: 9px;
+}
+/* Đơn giá, số lượng và thành tiền căn phải */
+.checkout-product-row > div:not(:first-child) {
+    text-align: right;
+}
+/* =========================================================
+   4. THÔNG TIN SẢN PHẨM
+   Bao gồm ảnh + tên + thông tin phụ
+========================================================= */
+.checkout-product-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+/* =========================================================
+   5. ẢNH SẢN PHẨM
+========================================================= */
+.checkout-thumb {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 7px;
+    background: #f0f5f0;
+}
+.checkout-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* =========================================================
+   6. TÊN SẢN PHẨM
+========================================================= */
+.checkout-product-info strong {
+    display: block;
+    color: #354239;
+    font-size: 10px;
+}
+/* =========================================================
+   7. THÔNG TIN PHỤ CỦA SẢN PHẨM
+   Ví dụ: kích thước cây
+========================================================= */
+.checkout-product-info span {
+    display: block;
+    margin-top: 4px;
+    color: #99a29b;
+    font-size: 8px;
+}

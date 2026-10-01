@@ -1,0 +1,16 @@
+/* CSS thanh toán được chia theo khu vực giao diện. Giữ thứ tự import để tránh đổi giao diện. */ @import "./thanh-toan/khung-chung.css";
+@import "./thanh-toan/dia-chi-chinh.css";
+@import "./thanh-toan/san-pham.css";
+@import "./thanh-toan/phuong-thuc-thanh-toan.css";
+@import "./thanh-toan/tong-tien.css";
+@import "./thanh-toan/modal-dia-chi.css";
+@import "./thanh-toan/bo-cuc-thich-ung.css";
+@import "./thanh-toan/ban-do-van-chuyen.css";
+@import "./thanh-toan/danh-sach-dia-chi.css";
+@import "./thanh-toan/phieu-giam-gia.css";
+@import "./thanh-toan/lua-chon.css";
+@import "./thanh-toan/thao-tac-dia-chi.css";
+/* Quy tắc địa chỉ và thành phần bổ sung của phiên bản hiện tại. */ @import "./thanh-toan/dia-chi.css";
+@import "./thanh-toan/thanh-phan-giao-dien.css";
+/* Các điều chỉnh responsive và giao diện đã có. */ @import "./thanh-toan/thich-ung-man-hinh.css";
+@import "./thanh-toan-hoan-thien.css";

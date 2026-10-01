@@ -1,0 +1,380 @@
+/* =========================================================
+   HERO
+========================================================= */
+.home-hero {
+    width: 100%;
+    background: #fbfcf8;
+    padding: 15px 0 70px;
+    overflow: hidden;
+}
+/* =========================================================
+   WRAPPER
+========================================================= */
+.hero-wrapper {
+    width: min(1400px, calc(100% - 100px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(500px, 0.95fr);
+    gap: 65px;
+    align-items: stretch;
+}
+/* =========================================================
+   LEFT
+========================================================= */
+.hero-left {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 0 20px;
+}
+/* =========================================================
+   HERO BADGE
+========================================================= */
+.hero-badge {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 17px;
+    margin-bottom: 31px;
+    border-radius: 30px;
+    background: #eaf5e9;
+    color: #287c37;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+.hero-badge-icon {
+    width: 17px;
+    height: 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 17px;
+    color: #2f883e;
+}
+.hero-badge-icon svg {
+    width: 17px;
+    height: 17px;
+    display: block;
+}
+/* =========================================================
+   TITLE
+========================================================= */
+.hero-title {
+    margin: 0;
+    max-width: 670px;
+    font-size: clamp(52px, 4.5vw, 75px);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: 0;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    color: #193021;
+}
+.hero-title span {
+    color: #2e853a;
+}
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+.hero-description {
+    max-width: 550px;
+    margin: 31px 0 0;
+    color: #4d5e68;
+    font-size: 17px;
+    line-height: 1.75;
+}
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 38px;
+}
+.hero-btn {
+    min-height: 58px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 29px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+/* PRIMARY */
+.hero-btn-primary {
+    gap: 22px;
+    background: #2f8739;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(47, 135, 57, 0.20);
+}
+.hero-btn-primary:hover {
+    background: #256f30;
+    transform: translateY(-2px);
+}
+.hero-btn-primary span {
+    font-size: 20px;
+    font-weight: 400;
+    transition: transform 0.2s ease;
+}
+.hero-btn-primary:hover span {
+    transform: translateX(4px);
+}
+/* OUTLINE */
+.hero-btn-outline {
+    min-width: 205px;
+    border: 1px solid #ceddce;
+    color: #193021;
+    background: #ffffff;
+}
+.hero-btn-outline:hover {
+    border-color: #2f8739;
+    color: #2f8739;
+    transform: translateY(-2px);
+}
+/* =========================================================
+   FEATURES
+========================================================= */
+.hero-features {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid #e3e9e1;
+}
+.hero-feature {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+.hero-feature-icon {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #edf7ed;
+    color: #2f8739;
+}
+.hero-feature-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+.hero-feature strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #183020;
+    font-size: 14px;
+}
+.hero-feature span {
+    display: block;
+    color: #748075;
+    font-size: 11px;
+    white-space: nowrap;
+}
+/* =========================================================
+   RIGHT
+========================================================= */
+.hero-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+/* =========================================================
+   IMAGE CARD
+========================================================= */
+.hero-image-card {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border-radius: 26px;
+    overflow: visible;
+    background: #e5eee3;
+    box-shadow: 0 30px 70px rgba(33, 76, 43, 0.14);
+}
+/* IMAGE */
+.hero-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 26px;
+}
+/* =========================================================
+   SALE BADGE
+========================================================= */
+.hero-sale-badge {
+    position: absolute;
+    top: 30px;
+    right: -18px;
+    min-width: 105px;
+    padding: 15px 18px;
+    border-radius: 15px;
+    background: #2f8739;
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(26, 94, 38, 0.25);
+}
+.hero-sale-badge span {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 11px;
+}
+.hero-sale-badge strong {
+    display: block;
+    font-size: 16px;
+}
+/* =========================================================
+   VARIETIES
+========================================================= */
+.hero-varieties {
+    position: absolute;
+    left: -30px;
+    bottom: 30px;
+    min-width: 210px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px 18px;
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 15px 40px rgba(32, 70, 40, 0.16);
+    backdrop-filter: blur(10px);
+}
+.hero-varieties-icon {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #eaf5e9;
+    font-size: 20px;
+}
+.hero-varieties strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #152d1d;
+    font-size: 14px;
+}
+.hero-varieties span {
+    display: block;
+    color: #8b96a1;
+    font-size: 11px;
+}
+/* =========================================================
+   LAPTOP
+========================================================= */
+@media (max-width: 1250px) {
+    .hero-wrapper {
+        width: calc(100% - 70px);
+        grid-template-columns: minmax(0, 1fr) minmax(430px, 0.9fr);
+        gap: 45px;
+    }
+    .hero-left {
+        padding-top: 28px;
+    }
+    .hero-image-card {
+        height: 550px;
+    }
+    .hero-title {
+        font-size: 58px;
+    }
+}
+/* =========================================================
+   TABLET
+========================================================= */
+@media (max-width: 950px) {
+    .home-hero {
+        padding: 30px 0 50px;
+    }
+    .hero-wrapper {
+        width: calc(100% - 50px);
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .hero-left {
+        min-height: auto;
+        padding: 20px 0;
+    }
+    .hero-main-content {
+        max-width: 700px;
+    }
+    .hero-image-card {
+        height: 600px;
+    }
+    .hero-varieties {
+        left: 20px;
+    }
+    .hero-sale-badge {
+        right: 20px;
+    }
+}
+/* =========================================================
+   MOBILE
+========================================================= */
+@media (max-width: 650px) {
+    .home-hero {
+        padding: 26px 0 48px;
+    }
+    .hero-wrapper {
+        width: calc(100% - 32px);
+        gap: 35px;
+    }
+    .hero-badge {
+        margin-bottom: 22px;
+        font-size: 10px;
+    }
+    .hero-title {
+        font-size: 43px;
+        letter-spacing: 0;
+    }
+    .hero-description {
+        margin-top: 23px;
+        font-size: 15px;
+        line-height: 1.65;
+    }
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 28px;
+    }
+    .hero-btn {
+        width: 100%;
+    }
+    .hero-features {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 30px;
+    }
+    .hero-feature span {
+        white-space: normal;
+    }
+    .hero-image-card {
+        height: 480px;
+        border-radius: 20px;
+    }
+    .hero-image {
+        border-radius: 20px;
+    }
+    .hero-varieties {
+        left: 15px;
+        bottom: 15px;
+        min-width: 190px;
+    }
+    .hero-sale-badge {
+        top: 15px;
+        right: 15px;
+    }
+}

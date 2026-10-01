@@ -1,0 +1,61 @@
+/* =========================================================
+   Responsive cơ bản
+========================================================= */
+@media(max-width:1500px) {
+    .order-stat-grid {
+        grid-template-columns:repeat(4,1fr)
+    }
+    .order-admin-layout {
+        grid-template-columns:minmax(0,1fr) 320px
+    }
+    .order-filter-panel {
+        grid-template-columns:repeat(3,1fr)
+    }
+    .search-filter,.date-range-group {
+        grid-column:span 2
+    }
+}
+@media(max-width:1200px) {
+    .order-admin-layout {
+        grid-template-columns:1fr
+    }
+    .order-detail-panel {
+        position:relative;
+        top:auto;
+        max-height:none
+    }
+    .workflow-cards {
+        grid-template-columns:1fr
+    }
+    .order-filter-panel {
+        grid-template-columns:repeat(2,1fr)
+    }
+}
+@media(max-width:760px) {
+    .order-toolbar {
+        align-items:stretch;
+        flex-direction:column
+    }
+    .order-export-actions {
+        flex-wrap:wrap
+    }
+    .order-stat-grid {
+        grid-template-columns:repeat(2,1fr)
+    }
+    .order-filter-panel {
+        grid-template-columns:1fr
+    }
+    .search-filter,.date-range-group {
+        grid-column:auto
+    }
+    .date-range {
+        flex-direction:column;
+        align-items:stretch
+    }
+    .date-range input {
+        width:100%
+    }
+    .workflow-steps {
+        align-items:flex-start
+    }
+}

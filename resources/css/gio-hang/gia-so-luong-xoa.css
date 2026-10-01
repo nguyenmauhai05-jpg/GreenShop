@@ -1,0 +1,79 @@
+/* =========================================================
+   GIÁ SẢN PHẨM
+========================================================= */
+.cart-unit-price {
+    color: #172d1d;
+    font-size: 14px;
+    font-weight: 600;
+}
+.cart-line-total {
+    color: #27883b;
+    font-size: 15px;
+    font-weight: 700;
+}
+/* =========================================================
+   SỐ LƯỢNG SẢN PHẨM
+========================================================= */
+.quantity-form {
+    width: 112px;
+    height: 40px;
+    display: grid;
+    grid-template-columns: 35px 42px 35px;
+    border: 1px solid #dfe5de;
+    border-radius: 7px;
+    overflow: hidden;
+    background: #ffffff;
+}
+.quantity-button {
+    border: none;
+    background: #ffffff;
+    color: #334139;
+    font-size: 17px;
+    cursor: pointer;
+}
+.quantity-button:hover:not(:disabled) {
+    background: #f0f6ef;
+    color: #25853a;
+}
+.quantity-button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+.quantity-input {
+    width: 100%;
+    border: none;
+    border-left: 1px solid #edf0ec;
+    border-right: 1px solid #edf0ec;
+    outline: none;
+    text-align: center;
+    font-size: 13px;
+    appearance: textfield;
+}
+.quantity-input::-webkit-inner-spin-button, .quantity-input::-webkit-outer-spin-button {
+    appearance: none;
+}
+.cart-quantity small {
+    display: block;
+    margin-top: 6px;
+    color: #859087;
+    font-size: 9px;
+    text-align: center;
+}
+/* =========================================================
+   NÚT XÓA SẢN PHẨM
+========================================================= */
+.cart-actions {
+    text-align: center;
+}
+.cart-delete-button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    opacity: 0.68;
+}
+.cart-delete-button:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}

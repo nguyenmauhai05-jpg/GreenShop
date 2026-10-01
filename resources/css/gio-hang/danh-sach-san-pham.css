@@ -1,0 +1,92 @@
+/* =========================================================
+   DANH SÁCH SẢN PHẨM
+========================================================= */
+.cart-products {
+    overflow: hidden;
+    border: 1px solid #e2e8e1;
+    border-radius: 12px;
+    background: #ffffff;
+}
+/* TIÊU ĐỀ CÁC CỘT */
+.cart-table-header {
+    min-height: 52px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: minmax(330px, 2.2fr) 0.8fr 1fr 0.9fr 60px;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #e4e9e3;
+    color: #536057;
+    font-size: 12px;
+    font-weight: 700;
+}
+/* Dịch riêng tiêu đề "Số lượng" sang phải */
+.cart-table-header > *:nth-child(3) {
+    transform: translateX(20px);
+}
+/* =========================================================
+   TỪNG SẢN PHẨM TRONG GIỎ
+========================================================= */
+.cart-item {
+    min-height: 145px;
+    padding: 18px 20px;
+    display: grid;
+    grid-template-columns: minmax(330px, 2.2fr) 0.8fr 1fr 0.9fr 60px;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #edf0ec;
+}
+.cart-product {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+.cart-product-image {
+    width: 105px;
+    height: 105px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f3f6f1;
+}
+.cart-product-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.cart-no-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+}
+/* THÔNG TIN SẢN PHẨM */
+.cart-product-info h3 {
+    margin: 0 0 7px;
+    color: #172d1d;
+    font-size: 17px;
+}
+.cart-product-info p {
+    margin: 3px 0;
+    color: #6f7971;
+    font-size: 11px;
+}
+/* TRẠNG THÁI SẢN PHẨM */
+.cart-status {
+    display: block;
+    margin-top: 8px;
+    font-size: 11px;
+    font-weight: 600;
+}
+.cart-status.available {
+    color: #29863d;
+}
+.cart-status.warning {
+    color: #df7b14;
+}
+.cart-status.unavailable {
+    color: #d14b43;
+}

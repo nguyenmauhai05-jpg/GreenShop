@@ -1,0 +1,825 @@
+@import "../shared/pagination.css";
+/* =========================================================
+   GREENSHOP - HEADER
+========================================================= */
+/* =========================================================
+   RESET
+========================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #17251b;
+    background: #ffffff;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+button, input, select, textarea {
+    font: inherit;
+}
+/* =========================================================
+   HEADER
+========================================================= */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 72px;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeea;
+}
+/* =========================================================
+   HEADER CONTAINER
+
+   3 CỘT:
+   - Logo trái
+   - Menu giữa
+   - Actions phải
+========================================================= */
+.header-container {
+    width: 100%;
+    height: 100%;
+    padding: 0 60px;
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr) 220px;
+    align-items: center;
+}
+/* =========================================================
+   LOGO
+========================================================= */
+.header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    justify-self: start;
+}
+.header-logo img {
+    display: block;
+    width: 155px;
+    height: auto;
+}
+/* =========================================================
+   MAIN NAV
+========================================================= */
+.main-nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 42px;
+}
+/* =========================================================
+   NAV LINK
+========================================================= */
+.nav-link {
+    position: relative;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3px;
+    color: #39443b;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    transition: color 0.25s ease;
+}
+/* =========================================================
+   NAV UNDERLINE
+========================================================= */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 2px;
+    width: 0;
+    height: 2px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: #2f7d3d;
+    opacity: 0;
+    transition: width 0.25s ease, opacity 0.25s ease;
+}
+/* =========================================================
+   NAV HOVER
+========================================================= */
+.nav-link:hover {
+    color: #2f7d3d;
+}
+.nav-link:hover::after {
+    width: 36px;
+    opacity: 0.5;
+}
+/* =========================================================
+   NAV ACTIVE
+========================================================= */
+.nav-link.active {
+    color: #237234;
+    font-weight: 600;
+}
+.nav-link.active::after {
+    width: 42px;
+    opacity: 1;
+}
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+.header-actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    justify-self: end;
+    gap: 12px;
+}
+/* =========================================================
+   ICON BUTTON
+========================================================= */
+.header-icon-btn {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #28352c;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.header-icon-btn:hover {
+    color: #2f7d3d;
+    background: #f1f5ef;
+    transform: translateY(-1px);
+}
+/* =========================================================
+   ICON SVG
+========================================================= */
+.header-icon-btn svg {
+    display: block;
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+/* =========================================================
+   SEARCH
+========================================================= */
+.header-search {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* =========================================================
+   SEARCH FORM
+========================================================= */
+.header-search-form {
+    position: absolute;
+    top: 50%;
+    right: 48px;
+    z-index: 20;
+    width: 0;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: 22px;
+    background: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%) translateX(10px);
+    box-shadow: none;
+    transition: width 0.3s ease, opacity 0.25s ease, visibility 0.25s ease, transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+/* =========================================================
+   SEARCH ACTIVE
+========================================================= */
+.header-search.active .header-search-form {
+    width: 300px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+    border-color: #dfe7df;
+    box-shadow: 0 5px 20px rgba(20, 60, 30, 0.08);
+}
+/* =========================================================
+   SEARCH INPUT
+========================================================= */
+.header-search-form input {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    padding: 0 18px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #26372b;
+    font-size: 13px;
+    font-weight: 400;
+}
+.header-search-form input::placeholder {
+    color: #9ba49d;
+}
+/* =========================================================
+   SEARCH FOCUS
+========================================================= */
+.header-search.active .header-search-form:focus-within {
+    border-color: #cbdccc;
+    box-shadow: 0 6px 24px rgba(20, 60, 30, 0.10);
+}
+/* =========================================================
+   SEARCH TOGGLE
+   CHỈ CÓ 1 ICON KÍNH LÚP
+========================================================= */
+.header-search-toggle {
+    position: relative;
+    z-index: 21;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+.header-search-toggle svg {
+    display: block;
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+/* =========================================================
+   SEARCH ACTIVE BUTTON
+========================================================= */
+.header-search.active .header-search-toggle {
+    color: #2f7d3d;
+}
+/* =========================================================
+   USER MENU
+========================================================= */
+.user-menu {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* =========================================================
+   USER DROPDOWN
+========================================================= */
+.user-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: -10px;
+    z-index: 200;
+    width: 240px;
+    padding: 10px;
+    border: 1px solid #e7e9e4;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 12px 35px rgba(20, 40, 25, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+}
+/* =========================================================
+   USER DROPDOWN SHOW
+========================================================= */
+.user-menu:hover .user-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+/* =========================================================
+   HOVER BRIDGE
+========================================================= */
+.user-dropdown::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    right: 0;
+    height: 15px;
+}
+/* =========================================================
+   USER INFO
+========================================================= */
+.user-dropdown-info {
+    padding: 10px 12px 14px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #eeeeea;
+}
+.user-dropdown-info strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #203425;
+    font-size: 14px;
+    font-weight: 600;
+}
+.user-dropdown-info span {
+    display: block;
+    overflow: hidden;
+    color: #849087;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* =========================================================
+   USER DROPDOWN ITEM
+========================================================= */
+.user-dropdown > a, .user-dropdown form button {
+    width: 100%;
+    display: block;
+    padding: 11px 12px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    color: #4d5850;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+.user-dropdown > a:hover, .user-dropdown form button:hover {
+    color: #2f7d3d;
+    background: #f2f6f0;
+}
+/* =========================================================
+   CART
+========================================================= */
+.cart-button {
+    position: relative;
+}
+/* =========================================================
+   CART COUNT
+========================================================= */
+.cart-count {
+    position: absolute;
+    top: 1px;
+    right: -1px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: #367b3d;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+}
+/* =========================================================
+   RESPONSIVE - LAPTOP
+========================================================= */
+@media (max-width: 1250px) {
+    .header-container {
+        padding: 0 35px;
+        grid-template-columns: 180px minmax(0, 1fr) 180px;
+    }
+    .header-logo img {
+        width: 140px;
+    }
+    .main-nav {
+        gap: 24px;
+    }
+    .nav-link {
+        font-size: 13px;
+    }
+    .header-actions {
+        gap: 8px;
+    }
+}
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+@media (max-width: 1050px) {
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 25px;
+    }
+    .main-nav {
+        display: none;
+    }
+    .header-actions {
+        width: auto;
+        margin-left: auto;
+    }
+}
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+@media (max-width: 600px) {
+    .site-header {
+        height: 64px;
+    }
+    .header-container {
+        padding: 0 15px;
+    }
+    .header-logo img {
+        width: 125px;
+    }
+    .header-actions {
+        gap: 2px;
+    }
+    .header-icon-btn {
+        width: 38px;
+        height: 38px;
+    }
+    .header-icon-btn svg {
+        width: 19px;
+        height: 19px;
+    }
+    .header-search.active .header-search-form {
+        width: 220px;
+    }
+}
+/* =========================================================
+   LOGO + TÊN GREENSHOP - HEADER KHÁCH HÀNG
+========================================================= */
+.site-header {
+    overflow: visible !important;
+}
+.site-header .header-container {
+    grid-template-columns: 250px minmax(0, 1fr) 220px;
+}
+.site-header .header-logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 11px;
+    width: auto !important;
+    height: 72px !important;
+    max-height: 72px !important;
+    overflow: visible !important;
+    color: #16843b;
+    text-decoration: none;
+}
+.site-header .header-logo-image {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 44px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.site-header .header-logo-image img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 44px !important;
+    max-height: 44px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+.site-header .header-brand-name {
+    display: block;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 750;
+    letter-spacing: -0.2px;
+    color: #16843b;
+    white-space: nowrap;
+}
+/* =========================================================
+   LOGO RESPONSIVE - TABLET
+========================================================= */
+@media (max-width: 1050px) {
+    .site-header .header-container {
+        grid-template-columns: 190px minmax(0, 1fr) 180px;
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+    .site-header .header-logo-image {
+        width: 42px;
+        height: 42px;
+        flex-basis: 42px;
+    }
+    .site-header .header-logo-image img {
+        max-width: 42px !important;
+        max-height: 42px !important;
+    }
+    .site-header .header-brand-name {
+        font-size: 18px;
+    }
+}
+/* =========================================================
+   LOGO RESPONSIVE - MOBILE
+========================================================= */
+@media (max-width: 760px) {
+    .site-header .header-brand-name {
+        display: none;
+    }
+    .site-header .header-container {
+        grid-template-columns: 56px minmax(0, 1fr) 120px;
+    }
+}
+/* =========================================================
+   ZOOM LOGO THỰC TẾ - HEADER
+
+   Ảnh upload hiện có khoảng trắng lớn nên phóng phần ảnh 4.5x,
+   nhưng giữ nguyên khung 48x48 và chiều cao header.
+========================================================= */
+.site-header .header-logo-image {
+    overflow: hidden !important;
+}
+.site-header .header-logo-image img {
+    transform: scale(4.5) !important;
+    transform-origin: center center !important;
+}
+/* Global form typography */ button, input, select, textarea {
+    font: inherit;
+}
+/* =========================================================
+   GREENSHOP - FOOTER (SHARED)
+========================================================= */
+/* =========================================================
+   FOOTER
+========================================================= */
+.site-footer {
+    width: 100%;
+    padding: 70px 0 28px;
+    background: #17311f;
+    color: #d8e3d8;
+}
+/* =========================================================
+   CONTAINER
+========================================================= */
+.footer-container {
+    width: min(1400px, calc(100% - 100px));
+    margin: 0 auto;
+}
+/* =========================================================
+   TOP
+========================================================= */
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 55px;
+}
+/* =========================================================
+   BRAND
+========================================================= */
+.footer-brand {
+    max-width: 330px;
+}
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.footer-logo img {
+    width: 160px;
+    height: auto;
+    display: block;
+}
+.footer-description {
+    margin: 0;
+    color: #b8c7ba;
+    font-size: 14px;
+    line-height: 1.8;
+}
+/* =========================================================
+   SOCIAL
+========================================================= */
+.footer-socials {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+.footer-socials a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 9px;
+    color: #dbe7dc;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.footer-socials a:hover {
+    background: #2f8739;
+    border-color: #2f8739;
+    transform: translateY(-2px);
+}
+/* =========================================================
+   COLUMN
+========================================================= */
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.footer-column h4 {
+    margin: 0 0 8px;
+    color: #8ea291;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+.footer-column a {
+    width: fit-content;
+    color: #c7d5c8;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.footer-column a:hover {
+    color: #ffffff;
+}
+/* =========================================================
+   BOTTOM
+========================================================= */
+.footer-bottom {
+    padding-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-top: 1px solid rgba(255,255,255,0.10);
+}
+.footer-bottom p {
+    margin: 0;
+    color: #8fa090;
+    font-size: 12px;
+}
+.footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+.footer-bottom-links a {
+    color: #8fa090;
+    font-size: 12px;
+    text-decoration: none;
+}
+.footer-bottom-links a:hover {
+    color: #ffffff;
+}
+/* =========================================================
+   TABLET
+========================================================= */
+@media (max-width: 1000px) {
+    .footer-container {
+        width: calc(100% - 60px);
+    }
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 45px;
+    }
+}
+/* =========================================================
+   MOBILE
+========================================================= */
+@media (max-width: 650px) {
+    .site-footer {
+        padding: 55px 0 25px;
+    }
+    .footer-container {
+        width: calc(100% - 32px);
+    }
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-bottom: 40px;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .footer-bottom-links {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+}
+/* =========================================================
+   LOGO + GREENSHOP - FOOTER
+========================================================= */
+.footer-logo {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 12px;
+    width: auto !important;
+    text-decoration: none;
+}
+.footer-logo-image {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 58px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.footer-logo-image img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 58px !important;
+    max-height: 58px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    /* Phóng phần hình thật, không dùng blend mode nên không đổi màu */ transform: scale(4.5) !important;
+    transform-origin: center center !important;
+}
+.footer-brand-name {
+    color: #ffffff;
+    font-size: 23px;
+    line-height: 1;
+    font-weight: 700;
+    white-space: nowrap;
+}
+/* AJAX add-to-cart feedback */
+.js-add-cart-form button.is-loading {
+    pointer-events: none;
+    opacity: .72;
+}
+.best-seller-cart-form {
+    margin: 0;
+}
+.ajax-cart-toast {
+    position: fixed;
+    top: 94px;
+    right: 24px;
+    z-index: 10050;
+    width: min(360px, calc(100vw - 32px));
+    padding: 13px 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border: 1px solid #cfe4d3;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #28412e;
+    box-shadow: 0 12px 34px rgba(31, 72, 41, .14);
+    font-size: 13px;
+    line-height: 1.45;
+    animation: ajaxCartToastIn .2s ease both;
+}
+.ajax-cart-toast.error {
+    border-color: #efcaca;
+    color: #a63b3b;
+}
+.ajax-cart-toast-icon {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eaf7ed;
+    color: #16843b;
+    font-size: 12px;
+    font-weight: 800;
+}
+.ajax-cart-toast.error .ajax-cart-toast-icon {
+    background: #fff0f0;
+    color: #c74343;
+}
+.ajax-cart-toast.is-hiding {
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity .2s ease, transform .2s ease;
+}
+@keyframes ajaxCartToastIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

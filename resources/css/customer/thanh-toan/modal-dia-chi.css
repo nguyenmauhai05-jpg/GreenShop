@@ -1,0 +1,134 @@
+/* Thanh toán: address-modal.css - tách từ layout.css, giữ nguyên quy tắc và thứ tự. */
+.address-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    place-items: center;
+    padding: 18px;
+}
+.address-modal.open {
+    display: grid;
+}
+.address-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(21,31,23,.46);
+    backdrop-filter: blur(2px);
+}
+.address-dialog {
+    position: relative;
+    width: min(590px,100%);
+    max-height: 82vh;
+    background: #fff;
+    border-radius: 13px;
+    box-shadow: 0 22px 70px rgba(0,0,0,.18);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.address-dialog-head {
+    padding: 17px 19px;
+    border-bottom: 1px solid #e9ede9;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.address-dialog-head span {
+    display: block;
+    color: #9ba49d;
+    font-size: 7px;
+    letter-spacing: .12em;
+    font-weight: 800;
+}
+.address-dialog-head h2 {
+    margin: 4px 0 0;
+    font-size: 16px;
+}
+.address-dialog-head button {
+    border: 0;
+    background: transparent;
+    color: #89938b;
+    font-size: 22px;
+    cursor: pointer;
+}
+.address-options {
+    padding: 12px;
+    overflow-y: auto;
+    display: grid;
+    gap: 8px;
+}
+.address-option {
+    width: 100%;
+    border: 1px solid #e0e6e0;
+    background: #fff;
+    border-radius: 8px;
+    padding: 13px;
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 10px;
+    text-align: left;
+    cursor: pointer;
+}
+.address-option.selected {
+    border-color: #74ad81;
+    background: #fbfefb;
+}
+.option-radio {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #bbc5bd;
+    border-radius: 50%;
+    margin-top: 2px;
+}
+.address-option.selected .option-radio {
+    border-color: var(--co-green);
+    box-shadow: inset 0 0 0 4px #fff;
+    background: var(--co-green);
+}
+.option-content strong {
+    display: block;
+    color: #354239;
+    font-size: 10px;
+}
+.option-content strong em {
+    font-style: normal;
+    margin-left: 5px;
+    padding: 2px 5px;
+    border-radius: 999px;
+    background: #eaf7ed;
+    color: var(--co-green);
+    font-size: 7px;
+}
+.option-content small, .option-content > span {
+    display: block;
+    color: #818c84;
+    font-size: 8px;
+    margin-top: 4px;
+    line-height: 1.45;
+}
+.address-dialog-actions {
+    padding: 13px 18px;
+    border-top: 1px solid #e9ede9;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+.address-dialog-actions button {
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 7px;
+    font-size: 9px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.address-cancel {
+    border: 1px solid #dce3dc;
+    background: #fff;
+    color: #67736a;
+}
+.address-confirm {
+    border: 1px solid var(--co-green);
+    background: var(--co-green);
+    color: #fff;
+}

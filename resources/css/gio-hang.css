@@ -1,0 +1,14 @@
+/* =========================================================
+   CSS GIỎ HÀNG - FILE TỔNG
+   Mỗi phần giao diện được tách thành một file nhỏ để dễ học,
+   dễ tìm và dễ chỉnh sửa.
+========================================================= */
+@import url('./gio-hang/khung-trang.css');
+@import url('./gio-hang/danh-sach-san-pham.css');
+@import url('./gio-hang/gia-so-luong-xoa.css');
+@import url('./gio-hang/chan-danh-sach.css');
+@import url('./gio-hang/tong-tien.css');
+@import url('./gio-hang/gio-hang-trong.css');
+@import url('./gio-hang/modal-xoa.css');
+@import url('./gio-hang/thong-bao.css');
+@import url('./gio-hang/thich-ung-man-hinh.css');

@@ -1,0 +1,84 @@
+/* =========================================================
+   SIDEBAR - LOGO + ICON
+   Kích thước layout chính được quản lý trong resources/css/admin.css
+========================================================= */
+.admin-sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+.admin-sidebar-logo-image {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 9px;
+}
+.admin-sidebar-logo-image img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    transform: scale(4.2);
+    transform-origin: center;
+}
+.admin-sidebar-logo > div {
+    min-width: 0;
+}
+.admin-sidebar-logo > div strong {
+    display: block;
+    font-size: 19px;
+    line-height: 1.15;
+    white-space: nowrap;
+}
+.admin-sidebar-logo > div span {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+}
+.admin-menu-icon {
+    width: 21px;
+    height: 21px;
+    flex: 0 0 21px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: currentColor;
+}
+.admin-menu-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.admin-logout {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.admin-logout-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.admin-logout-icon svg {
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}

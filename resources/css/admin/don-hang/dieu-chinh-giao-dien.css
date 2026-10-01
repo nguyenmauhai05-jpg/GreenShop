@@ -1,0 +1,979 @@
+/* =========================================================
+   Các điều chỉnh giao diện cuối cùng, giữ nguyên thứ tự để không đổi giao diện
+========================================================= */
+/* =========================================================
+   FIX BỐ CỤC QUẢN LÝ ĐƠN HÀNG
+   - Bỏ tình trạng card/filter bị panel chi tiết che
+   - Không cho nội dung cột trái tràn sang cột phải
+   - Giữ panel chi tiết rõ ràng, không đè nội dung
+========================================================= */
+.order-admin-page, .order-admin-layout, .order-main-column, .order-table-card, .order-table-scroll, .order-filter-panel {
+    min-width: 0;
+}
+.order-admin-layout {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    overflow: visible;
+}
+/* Không xếp 8 card trên một hàng vì sẽ tràn vào panel chi tiết */
+.order-stat-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+    overflow: hidden;
+}
+.order-stat-card {
+    min-width: 0;
+    width: 100%;
+}
+/* Filter không được rộng quá phần nội dung bên trái */
+.order-filter-panel {
+    width: 100%;
+    grid-template-columns: minmax(145px, 1.25fr) minmax(135px, .9fr) minmax(135px, .9fr) minmax(145px, .95fr) minmax(260px, 1.35fr) auto auto;
+}
+.filter-group, .filter-input-wrap, .date-range-group, .date-range {
+    min-width: 0;
+}
+.filter-group input, .filter-group select {
+    width: 100%;
+    max-width: 100%;
+}
+.date-range input {
+    min-width: 0;
+}
+/* Bảng chỉ scroll bên trong card, không đẩy sang panel chi tiết */
+.order-table-card {
+    width: 100%;
+    overflow: hidden;
+}
+.order-table-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+/* Panel chi tiết luôn nằm đúng cột, không che phần thống kê/filter */
+.order-detail-panel {
+    width: 340px;
+    max-width: 340px;
+    justify-self: end;
+    z-index: 5;
+}
+/* Khi cuộn, chừa đúng chiều cao header sticky (82px) + khoảng cách */ @media (min-width: 1201px) {
+    .order-detail-panel {
+        top: 96px;
+    }
+}
+@media (max-width: 1500px) {
+    .order-admin-layout {
+        grid-template-columns: minmax(0, 1fr) 320px;
+    }
+    .order-detail-panel {
+        width: 320px;
+        max-width: 320px;
+    }
+    .order-stat-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .order-filter-panel {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .search-filter, .date-range-group {
+        grid-column: span 2;
+    }
+}
+@media (max-width: 1200px) {
+    .order-admin-layout {
+        grid-template-columns: 1fr;
+    }
+    .order-detail-panel {
+        position: relative;
+        top: auto;
+        width: 100%;
+        max-width: none;
+        justify-self: stretch;
+        max-height: none;
+    }
+    .order-stat-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .order-filter-panel {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .search-filter, .date-range-group {
+        grid-column: span 2;
+    }
+}
+@media (max-width: 760px) {
+    .order-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .order-filter-panel {
+        grid-template-columns: 1fr;
+    }
+    .search-filter, .date-range-group {
+        grid-column: auto;
+    }
+}
+/* =========================================================
+   FIX FILTER ACTIONS - HIỆN ĐỦ NÚT LỌC + LÀM MỚI
+========================================================= */
+/* Bộ lọc dùng 5 cột chính + 2 nút ở hàng kế tiếp khi thiếu chiều rộng */
+.order-filter-panel {
+    grid-template-columns: minmax(180px, 1.15fr) minmax(150px, .9fr) minmax(150px, .9fr) minmax(165px, .95fr) minmax(290px, 1.35fr);
+    align-items: end;
+}
+/* Đưa 2 nút xuống một hàng riêng để không bị panel chi tiết che */
+.filter-submit, .filter-reset {
+    grid-row: 2;
+    width: 110px;
+    min-width: 110px;
+}
+.filter-submit {
+    grid-column: 4;
+    justify-self: end;
+}
+.filter-reset {
+    grid-column: 5;
+    justify-self: start;
+}
+/* Khoảng ngày luôn đủ chỗ */
+.date-range-group {
+    min-width: 290px;
+}
+.date-range {
+    display: grid;
+    grid-template-columns: minmax(125px, 1fr) auto minmax(125px, 1fr);
+    align-items: center;
+    gap: 7px;
+}
+.date-range input {
+    width: 100%;
+}
+/* Tablet: nút lọc/làm mới vẫn hiển thị đầy đủ */ @media (max-width: 1500px) {
+    .order-filter-panel {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .search-filter {
+        grid-column: span 1;
+    }
+    .date-range-group {
+        grid-column: span 2;
+        min-width: 0;
+    }
+    .filter-submit, .filter-reset {
+        grid-row: auto;
+        width: 100%;
+        min-width: 0;
+        justify-self: stretch;
+    }
+    .filter-submit {
+        grid-column: 2;
+    }
+    .filter-reset {
+        grid-column: 3;
+    }
+}
+@media (max-width: 1200px) {
+    .order-filter-panel {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .search-filter, .date-range-group {
+        grid-column: span 2;
+    }
+    .filter-submit {
+        grid-column: 1;
+    }
+    .filter-reset {
+        grid-column: 2;
+    }
+}
+@media (max-width: 760px) {
+    .order-filter-panel {
+        grid-template-columns: 1fr;
+    }
+    .search-filter, .date-range-group, .filter-submit, .filter-reset {
+        grid-column: 1;
+    }
+    .date-range {
+        grid-template-columns: 1fr;
+    }
+    .date-range span {
+        text-align: center;
+    }
+}
+/* =========================================================
+   FINAL DESKTOP LAYOUT FIX
+   Mục tiêu:
+   - Không mất ô ngày kết thúc
+   - Luôn thấy nút Lọc + Làm mới
+   - Bảng cố gắng hiển thị đủ các cột trong vùng bên trái
+   - Panel chi tiết không che nội dung
+========================================================= */
+/* Chia trang rõ 2 cột */
+.order-admin-layout {
+    grid-template-columns: minmax(0, 1fr) 360px !important;
+    gap: 16px !important;
+}
+.order-main-column {
+    min-width: 0;
+    width: 100%;
+}
+.order-detail-panel {
+    width: 360px !important;
+    max-width: 360px !important;
+}
+/* ===== THỐNG KÊ ===== */
+.order-stat-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+}
+/* ===== BỘ LỌC: chủ động chia 2 hàng ===== */
+.order-filter-panel {
+    display: grid !important;
+    grid-template-columns: minmax(180px, 1.15fr) minmax(155px, .95fr) minmax(155px, .95fr) minmax(170px, 1fr) !important;
+    gap: 12px !important;
+    align-items: end !important;
+    width: 100% !important;
+}
+/* Hàng 1: 4 trường */
+.search-filter {
+    grid-column: 1 !important;
+}
+.order-filter-panel .filter-group:nth-of-type(2) {
+    grid-column: 2 !important;
+}
+.order-filter-panel .filter-group:nth-of-type(3) {
+    grid-column: 3 !important;
+}
+.order-filter-panel .filter-group:nth-of-type(4) {
+    grid-column: 4 !important;
+}
+/* Hàng 2: khoảng thời gian + nút */
+.date-range-group {
+    grid-column: 1 / span 2 !important;
+    grid-row: 2 !important;
+    min-width: 0 !important;
+}
+.date-range {
+    display: grid !important;
+    grid-template-columns: minmax(145px, 1fr) 22px minmax(145px, 1fr) !important;
+    gap: 8px !important;
+    align-items: center !important;
+}
+.date-range input {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+.filter-submit {
+    grid-column: 3 !important;
+    grid-row: 2 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-self: stretch !important;
+}
+.filter-reset {
+    grid-column: 4 !important;
+    grid-row: 2 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-self: stretch !important;
+}
+/* ===== BẢNG: giảm độ rộng để thấy đủ hơn ===== */
+.order-table-card {
+    width: 100% !important;
+    overflow: hidden !important;
+}
+.order-table-scroll {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+}
+.admin-order-table {
+    width: 100% !important;
+    min-width: 980px !important;
+    table-layout: fixed !important;
+}
+.admin-order-table th, .admin-order-table td {
+    padding: 9px 7px !important;
+    font-size: 10px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* Chia độ rộng hợp lý cho 8 cột */
+.admin-order-table th:nth-child(1), .admin-order-table td:nth-child(1) {
+    width: 12%;
+}
+.admin-order-table th:nth-child(2), .admin-order-table td:nth-child(2) {
+    width: 15%;
+}
+.admin-order-table th:nth-child(3), .admin-order-table td:nth-child(3) {
+    width: 11%;
+}
+.admin-order-table th:nth-child(4), .admin-order-table td:nth-child(4) {
+    width: 12%;
+}
+.admin-order-table th:nth-child(5), .admin-order-table td:nth-child(5) {
+    width: 10%;
+}
+.admin-order-table th:nth-child(6), .admin-order-table td:nth-child(6) {
+    width: 14%;
+}
+.admin-order-table th:nth-child(7), .admin-order-table td:nth-child(7) {
+    width: 14%;
+}
+.admin-order-table th:nth-child(8), .admin-order-table td:nth-child(8) {
+    width: 12%;
+}
+/* Không để nút thao tác bị cắt */
+.table-actions {
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+}
+.btn-view, .btn-action {
+    max-width: 100%;
+    font-size: 8.5px !important;
+    padding: 0 6px !important;
+}
+/* ===== RESPONSIVE ===== */ @media (max-width: 1500px) {
+    .order-admin-layout {
+        grid-template-columns: minmax(0, 1fr) 330px !important;
+    }
+    .order-detail-panel {
+        width: 330px !important;
+        max-width: 330px !important;
+    }
+    .order-filter-panel {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    .search-filter, .order-filter-panel .filter-group:nth-of-type(2), .order-filter-panel .filter-group:nth-of-type(3), .order-filter-panel .filter-group:nth-of-type(4) {
+        grid-column: auto !important;
+    }
+    .date-range-group {
+        grid-column: 1 / span 2 !important;
+        grid-row: auto !important;
+    }
+    .filter-submit {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }
+    .filter-reset {
+        grid-column: 2 !important;
+        grid-row: auto !important;
+    }
+}
+@media (max-width: 1200px) {
+    .order-admin-layout {
+        grid-template-columns: 1fr !important;
+    }
+    .order-detail-panel {
+        width: 100% !important;
+        max-width: none !important;
+    }
+    .admin-order-table {
+        min-width: 900px !important;
+    }
+}
+@media (max-width: 760px) {
+    .order-filter-panel {
+        grid-template-columns: 1fr !important;
+    }
+    .search-filter,
+    .order-filter-panel .filter-group:nth-of-type(2),
+    .order-filter-panel .filter-group:nth-of-type(3),
+    .order-filter-panel .filter-group:nth-of-type(4),
+    .date-range-group,
+    .filter-submit,
+    .filter-reset {
+        grid-column: 1 !important;
+    }
+    .date-range {
+        grid-template-columns: 1fr !important;
+    }
+    .date-range span {
+        text-align: center !important;
+    }
+}
+/* =========================================================
+   STAT CARDS - GỌN CHIỀU DỌC + RỘNG NGANG + ICON MỚI
+   Chỉ tác động 8 card thống kê đơn hàng.
+========================================================= */
+.order-stat-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+}
+.order-stat-card {
+    min-height: 66px !important;
+    padding: 8px 14px !important;
+    gap: 10px !important;
+    align-items: center !important;
+}
+.order-stat-card small {
+    min-height: 0 !important;
+    font-size: 10px !important;
+    line-height: 1.15 !important;
+    margin: 0 !important;
+}
+.order-stat-card strong {
+    font-size: 20px !important;
+    line-height: 1.05 !important;
+    margin: 3px 0 1px !important;
+}
+.order-stat-card span:last-child {
+    font-size: 9px !important;
+    line-height: 1.05 !important;
+}
+.order-stat-card .stat-icon {
+    width: 34px !important;
+    height: 34px !important;
+    flex: 0 0 34px !important;
+    border-radius: 9px !important;
+    font-size: 0 !important;
+    position: relative;
+}
+.order-stat-card .stat-icon::before {
+    content: "";
+    width: 19px;
+    height: 19px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.order-stat-card:nth-child(1) .stat-icon::before {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%233478d8%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%225%22%20y%3D%224%22%20width%3D%2214%22%20height%3D%2217%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M9%204V3h6v1M8%209h8M8%2013h8M8%2017h5%22%2F%3E%3C%2Fsvg%3E");
+}
+.order-stat-card:nth-child(2) .stat-icon::before {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23e48924%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%223%22%20y%3D%226%22%20width%3D%2218%22%20height%3D%2212%22%20rx%3D%222%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%222.5%22%2F%3E%3Cpath%20d%3D%22M7%209H5v2M17%2015h2v-2%22%2F%3E%3C%2Fsvg%3E");
+}
+.order-stat-card:nth-child(3) .stat-icon::before {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%238656d8%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%223%22%20y%3D%225%22%20width%3D%2218%22%20height%3D%2214%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M3%209h18M8%2014l2%202%204-4%22%2F%3E%3C%2Fsvg%3E");
+}
+.order-stat-card:nth-child(4) .stat-icon::before {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%238656d8%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m4%207%208-4%208%204-8%204-8-4Z%22%2F%3E%3Cpath%20d%3D%22M4%207v10l8%204%208-4V7M12%2011v10%22%2F%3E%3C%2Fsvg%3E");
+}
+.order-stat-card:nth-child(5) .stat-icon::before {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%233478d8%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M3%206h11v10H3zM14%2010h4l3%203v3h-7z%22%2F%3E%3Ccircle%20cx%3D%227%22%20cy%3D%2218%22%20r%3D%222%22%2F%3E%3Ccircle%20cx%3D%2218%22%20cy%3D%2218%22%20r%3D%222%22%2F%3E%3C%2Fsvg%3E");
+}
+.order-stat-card:nth-child(6) .stat-icon::before {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231d9a49%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%229%22%2F%3E%3Cpath%20d%3D%22m8%2012%202.5%202.5L16%209%22%2F%3E%3C%2Fsvg%3E");
+}
+.order-stat-card:nth-child(7) .stat-icon::before {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231d9a49%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m12%203%202.1%202.1%203-.2.8%202.9%202.6%201.5-1.2%202.7%201.2%202.7-2.6%201.5-.8%202.9-3-.2L12%2021l-2.1-2.1-3%20.2-.8-2.9-2.6-1.5L4.7%2012%203.5%209.3l2.6-1.5.8-2.9%203%20.2L12%203Z%22%2F%3E%3Cpath%20d%3D%22m8.5%2012%202.2%202.2%204.8-4.8%22%2F%3E%3C%2Fsvg%3E");
+}
+.order-stat-card:nth-child(8) .stat-icon::before {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23dc4a4a%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%229%22%2F%3E%3Cpath%20d%3D%22m9%209%206%206M15%209l-6%206%22%2F%3E%3C%2Fsvg%3E");
+}
+@media (max-width: 760px) {
+    .order-stat-card {
+        min-height: 64px !important;
+        padding: 8px 12px !important;
+    }
+}
+/* Bộ lọc gọn: tìm kiếm, phương thức thanh toán, khoảng ngày, thao tác. */
+.order-filter-panel {
+    grid-template-columns:minmax(200px,1.5fr) minmax(160px,1fr) !important;
+}
+.order-filter-panel .search-filter {
+    grid-column:1 !important;
+    grid-row:1 !important;
+}
+.order-filter-panel .filter-group:nth-of-type(2) {
+    grid-column:2 !important;
+    grid-row:1 !important;
+}
+.order-filter-panel .date-range-group {
+    grid-column:1 / 3 !important;
+    grid-row:2 !important;
+}
+.order-filter-panel .filter-submit {
+    grid-column:1 !important;
+    grid-row:3 !important;
+}
+.order-filter-panel .filter-reset {
+    grid-column:2 !important;
+    grid-row:3 !important;
+}
+@media(max-width:760px) {
+    .order-filter-panel {
+        grid-template-columns:minmax(0,1fr) !important
+    }
+    .order-filter-panel .search-filter,
+    .order-filter-panel .filter-group:nth-of-type(2),
+    .order-filter-panel .date-range-group,
+    .order-filter-panel .filter-submit,
+    .order-filter-panel .filter-reset {
+        grid-column:1 !important;
+        grid-row:auto !important
+    }
+}
+/* Filter: one line on desktop; do not squeeze date inputs or buttons. */ @media(min-width:1100px) {
+    .order-filter-panel {
+        display:flex!important;
+        align-items:end!important;
+        flex-wrap:nowrap!important;
+        gap:10px!important;
+        overflow-x:auto;
+        max-width:100%
+    }
+    .order-filter-panel .search-filter {
+        flex:1 1 170px;
+        min-width:150px;
+        grid-column:auto!important
+    }
+    .order-filter-panel>.filter-group:not(.search-filter):not(.date-range-group) {
+        flex:0 1 165px;
+        min-width:130px
+    }
+    .order-filter-panel .date-range-group {
+        flex:1.45 1 245px;
+        min-width:225px;
+        grid-column:auto!important
+    }
+    .order-filter-panel .filter-submit,.order-filter-panel .filter-reset {
+        flex:0 0 auto
+    }
+}
+/* FIX: Bộ lọc đơn hàng trên MỘT hàng, nút nhỏ, không cuộn ngang.
+   Chỉ tác động form bộ lọc, không ảnh hưởng bảng đơn hàng. */
+@media (min-width: 900px) {
+    form.order-filter-panel {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, .85fr) minmax(0, 1.65fr) 62px 92px !important;
+        grid-template-rows: auto !important;
+        gap: 10px !important;
+        align-items: end !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        overflow: visible !important;
+        box-sizing: border-box !important;
+    }
+    form.order-filter-panel > .search-filter {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        min-width: 0 !important;
+        width: auto !important;
+    }
+    form.order-filter-panel > .filter-group:not(.search-filter):not(.date-range-group) {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        min-width: 0 !important;
+        width: auto !important;
+    }
+    form.order-filter-panel > .date-range-group {
+        grid-column: 3 !important;
+        grid-row: 1 !important;
+        min-width: 0 !important;
+        width: auto !important;
+    }
+    form.order-filter-panel > .filter-submit {
+        grid-column: 4 !important;
+        grid-row: 1 !important;
+    }
+    form.order-filter-panel > .filter-reset {
+        grid-column: 5 !important;
+        grid-row: 1 !important;
+    }
+    form.order-filter-panel > .filter-submit, form.order-filter-panel > .filter-reset {
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 40px !important;
+        padding: 0 5px !important;
+        font-size: 12px !important;
+        white-space: nowrap !important;
+        justify-self: stretch !important;
+        align-self: end !important;
+        box-sizing: border-box !important;
+    }
+    form.order-filter-panel .filter-group {
+        min-width: 0 !important;
+    }
+    form.order-filter-panel .filter-group > label {
+        display: block !important;
+        white-space: nowrap !important;
+        font-size: 12px !important;
+        margin-bottom: 6px !important;
+    }
+    form.order-filter-panel .filter-input-wrap, form.order-filter-panel .filter-group select {
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+    form.order-filter-panel .date-range {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 14px minmax(0, 1fr) !important;
+        gap: 4px !important;
+        align-items: center !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+    form.order-filter-panel .date-range input {
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 40px !important;
+        padding: 0 3px !important;
+        font-size: 11px !important;
+        box-sizing: border-box !important;
+    }
+    form.order-filter-panel .date-range span {
+        text-align: center !important;
+    }
+}
+/* Chỉ xuống hàng ở kích thước thực sự nhỏ; tuyệt đối không tạo thanh cuộn. */ @media (max-width: 899px) {
+    form.order-filter-panel {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        overflow: visible !important;
+    }
+    form.order-filter-panel > .search-filter,
+    form.order-filter-panel > .filter-group:not(.search-filter):not(.date-range-group),
+    form.order-filter-panel > .date-range-group,
+    form.order-filter-panel > .filter-submit,
+    form.order-filter-panel > .filter-reset {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        width: auto !important;
+        min-width: 0 !important;
+    }
+    form.order-filter-panel > .date-range-group {
+        grid-column: 1 / -1 !important;
+    }
+    form.order-filter-panel .date-range {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 16px minmax(0, 1fr) !important;
+        gap: 6px !important;
+    }
+    form.order-filter-panel .date-range input {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+}
+/* =========================================================
+   CHINH SUA CUOI - QUAN LY DON HANG
+   1. Panel chi tiet dung yen tai vi tri cua no, khong bam theo khi cuon trang.
+   2. Label Phuong thuc thanh toan va Khoang thoi gian cung hang.
+   3. Cot Thao tac chi con nut Xem; nut xu ly nam trong panel chi tiet.
+========================================================= */
+/* Không cho card chi tiết chạy theo trang */
+.order-detail-panel {
+    position: relative !important;
+    top: auto !important;
+    align-self: start !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+}
+/* Bộ lọc nằm trên cùng một hàng ở desktop */ @media (min-width: 1201px) {
+    .order-filter-panel {
+        display: grid !important;
+        grid-template-columns: minmax(210px, 1.2fr) minmax(170px, 0.8fr) minmax(330px, 1.45fr) 86px 126px !important;
+        column-gap: 12px !important;
+        row-gap: 8px !important;
+        align-items: end !important;
+    }
+    .order-filter-panel .search-filter,
+    .order-filter-panel .filter-group:nth-of-type(2),
+    .order-filter-panel .date-range-group,
+    .order-filter-panel .filter-submit,
+    .order-filter-panel .filter-reset {
+        grid-row: 1 !important;
+        grid-column: auto !important;
+    }
+    .order-filter-panel .filter-group {
+        align-self: end !important;
+    }
+    .order-filter-panel .filter-group > label {
+        display: flex !important;
+        align-items: center !important;
+        height: 20px !important;
+        margin: 0 0 6px 0 !important;
+        line-height: 20px !important;
+    }
+    .date-range {
+        display: grid !important;
+        grid-template-columns: minmax(135px, 1fr) 18px minmax(135px, 1fr) !important;
+        align-items: center !important;
+        gap: 6px !important;
+    }
+}
+/* =========================================================
+   DIEU CHINH CUOI CUNG - BO LOC / CHI TIET / PHAN TRANG
+========================================================= */
+/* Card chi tiet nam dung vi tri trong luong trang, khong sticky */
+.order-detail-panel {
+    position: static !important;
+    top: auto !important;
+    align-self: start !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+}
+/* Desktop: 2 hang. Hang 1 = tim kiem + phuong thuc; Hang 2 = ngay + 2 nut */ @media (min-width: 900px) {
+    form.order-filter-panel {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 86px 126px !important;
+        grid-template-rows: auto auto !important;
+        gap: 12px 14px !important;
+        align-items: end !important;
+        overflow: visible !important;
+    }
+    form.order-filter-panel > .search-filter {
+        grid-column: 1 / 3 !important;
+        grid-row: 1 !important;
+    }
+    form.order-filter-panel > .filter-group:not(.search-filter):not(.date-range-group) {
+        grid-column: 3 / 5 !important;
+        grid-row: 1 !important;
+    }
+    form.order-filter-panel > .date-range-group {
+        grid-column: 1 / 3 !important;
+        grid-row: 2 !important;
+    }
+    form.order-filter-panel > .filter-submit {
+        grid-column: 3 !important;
+        grid-row: 2 !important;
+        height: 52px !important;
+        align-self: end !important;
+    }
+    form.order-filter-panel > .filter-reset {
+        grid-column: 4 !important;
+        grid-row: 2 !important;
+        height: 52px !important;
+        align-self: end !important;
+    }
+    form.order-filter-panel .filter-group > label {
+        display: block !important;
+        height: auto !important;
+        margin: 0 0 8px !important;
+        line-height: 1.35 !important;
+        white-space: nowrap !important;
+    }
+    form.order-filter-panel .date-range {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 22px minmax(0, 1fr) !important;
+        gap: 8px !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    form.order-filter-panel .date-range input {
+        height: 52px !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+}
+/* Phan trang can giua va cach xa mep duoi cua card */
+.order-table-card > .gs-pagination {
+    justify-content: center !important;
+    margin-top: 0 !important;
+    padding: 20px 0 28px !important;
+    border-top: 1px solid #e3e9e1 !important;
+}
+/* =========================================================
+   BO LOC DON HANG - DESKTOP: GOM TAT CA VE CUNG 1 HANG
+   Tim kiem | Phuong thuc thanh toan | Khoang thoi gian | Loc | Lam moi
+========================================================= */
+@media (min-width: 900px) {
+    form.order-filter-panel {
+        display: grid !important;
+        grid-template-columns: minmax(210px, 1.35fr) minmax(170px, 0.85fr) minmax(280px, 1.15fr) 90px 112px !important;
+        grid-template-rows: auto !important;
+        gap: 12px !important;
+        align-items: end !important;
+    }
+    form.order-filter-panel > .search-filter,
+    form.order-filter-panel > .filter-group:not(.search-filter):not(.date-range-group),
+    form.order-filter-panel > .date-range-group,
+    form.order-filter-panel > .filter-submit,
+    form.order-filter-panel > .filter-reset {
+        grid-row: 1 !important;
+        grid-column: auto !important;
+    }
+    form.order-filter-panel .filter-group > label {
+        display: block !important;
+        min-height: 18px !important;
+        margin: 0 0 8px !important;
+        line-height: 18px !important;
+        white-space: nowrap !important;
+    }
+    form.order-filter-panel .filter-input-wrap input,
+    form.order-filter-panel select,
+    form.order-filter-panel .date-range input,
+    form.order-filter-panel .filter-submit,
+    form.order-filter-panel .filter-reset {
+        height: 46px !important;
+    }
+    form.order-filter-panel .date-range {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr) !important;
+        gap: 6px !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    form.order-filter-panel .date-range input {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+}
+/* =========================================================
+   SỬA CUỐI: GIỮ BỘ LỌC NẰM GỌN TRONG CỘT TRÁI
+   - Desktop: 1 hàng
+   - Không tràn sang khung chi tiết đơn hàng
+   - Luôn hiện đủ Lọc + Làm mới
+========================================================= */
+@media (min-width: 1201px) {
+    .order-filter-panel {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1.30fr) minmax(0, 1fr) minmax(280px, 1.55fr) 96px 112px !important;
+        gap: 10px !important;
+        align-items: end !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+    .order-filter-panel > *, .filter-group, .filter-input-wrap, .date-range-group, .date-range {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .search-filter {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+    }
+    .order-filter-panel .filter-group:nth-of-type(2) {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+    }
+    .date-range-group {
+        grid-column: 3 !important;
+        grid-row: 1 !important;
+        min-width: 0 !important;
+    }
+    .date-range {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 18px minmax(0, 1fr) !important;
+        gap: 6px !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    .date-range input, .filter-group input, .filter-group select {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .date-range span {
+        text-align: center !important;
+    }
+    .filter-submit {
+        grid-column: 4 !important;
+        grid-row: 1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        justify-self: stretch !important;
+    }
+    .filter-reset {
+        grid-column: 5 !important;
+        grid-row: 1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        justify-self: stretch !important;
+    }
+}
+/* =========================================================
+   FIX CUOI CUNG - BO LOC KHONG TRAN SANG COT CHI TIET
+   Giu 1 hang tren desktop, tat ca cot deu co the co lai.
+========================================================= */
+.order-main-column {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+form.order-filter-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+@media (min-width: 1000px) {
+    form.order-filter-panel {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) minmax(0, 1.65fr) 82px 102px !important;
+        gap: 10px !important;
+        align-items: end !important;
+        overflow: hidden !important;
+    }
+    form.order-filter-panel > .search-filter {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+    }
+    form.order-filter-panel > .filter-group:not(.search-filter):not(.date-range-group) {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+    }
+    form.order-filter-panel > .date-range-group {
+        grid-column: 3 !important;
+        grid-row: 1 !important;
+    }
+    form.order-filter-panel > .filter-submit {
+        grid-column: 4 !important;
+        grid-row: 1 !important;
+    }
+    form.order-filter-panel > .filter-reset {
+        grid-column: 5 !important;
+        grid-row: 1 !important;
+    }
+    form.order-filter-panel > *,
+    form.order-filter-panel .filter-group,
+    form.order-filter-panel .filter-input-wrap,
+    form.order-filter-panel .date-range-group,
+    form.order-filter-panel .date-range {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    form.order-filter-panel .filter-input-wrap input, form.order-filter-panel select, form.order-filter-panel .date-range input {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    form.order-filter-panel .date-range {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 16px minmax(0, 1fr) !important;
+        gap: 5px !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    form.order-filter-panel .date-range span {
+        text-align: center !important;
+    }
+    form.order-filter-panel .filter-submit, form.order-filter-panel .filter-reset {
+        width: 100% !important;
+        min-width: 0 !important;
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+        justify-self: stretch !important;
+        box-sizing: border-box !important;
+    }
+}
+@media (max-width: 999px) {
+    form.order-filter-panel {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        overflow: hidden !important;
+    }
+    form.order-filter-panel > .search-filter,
+    form.order-filter-panel > .filter-group:not(.search-filter):not(.date-range-group),
+    form.order-filter-panel > .filter-submit,
+    form.order-filter-panel > .filter-reset {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+    form.order-filter-panel > .date-range-group {
+        grid-column: 1 / -1 !important;
+        grid-row: auto !important;
+        min-width: 0 !important;
+    }
+}

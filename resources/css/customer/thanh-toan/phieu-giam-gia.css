@@ -1,0 +1,157 @@
+/* Thanh toán: vouchers.css - tách từ layout.css, giữ nguyên quy tắc và thứ tự. */ /* =========================================================
+   CHECKOUT - VOUCHER
+========================================================= */
+.checkout-voucher-list {
+    padding: 12px 16px 15px;
+    display: grid;
+    gap: 8px;
+}
+.checkout-voucher-option {
+    width: 100%;
+    min-height: 58px;
+    padding: 10px 12px;
+    display: grid;
+    grid-template-columns: 17px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #dfe6df;
+    border-radius: 9px;
+    background: #fff;
+    text-align: left;
+    cursor: pointer;
+}
+.checkout-voucher-option:hover {
+    border-color: #9ac7a3;
+}
+.checkout-voucher-option.selected {
+    border-color: #2b9147;
+    background: #f7fcf8;
+}
+.checkout-voucher-option.needs-more {
+    background: #fffdf8;
+}
+.voucher-radio {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #b9c4bb;
+    border-radius: 50%;
+}
+.checkout-voucher-option.selected .voucher-radio {
+    border-color: #21883e;
+    background: #21883e;
+    box-shadow: inset 0 0 0 4px #fff;
+}
+.voucher-main strong {
+    display: block;
+    color: #2e3d32;
+    font-size: 10px;
+}
+.voucher-main small {
+    display: block;
+    margin-top: 4px;
+    color: #828d85;
+    font-size: 8px;
+    line-height: 1.45;
+}
+.voucher-condition {
+    padding: 4px 7px;
+    border-radius: 999px;
+    background: #eaf7ed;
+    color: #21883d;
+    font-size: 7px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.checkout-voucher-option.needs-more .voucher-condition {
+    background: #fff2dc;
+    color: #bd7415;
+}
+.voucher-empty {
+    margin: 12px 16px 15px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #f8faf8;
+    color: #7a857d;
+    font-size: 9px;
+}
+.voucher-suggestion-box {
+    margin: 0 16px 16px;
+    padding: 12px;
+    border: 1px solid #f0d6a5;
+    border-radius: 9px;
+    background: #fffbf3;
+}
+.voucher-suggestion-products {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+}
+.voucher-suggest-product {
+    min-width: 0;
+    padding: 8px;
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 8px;
+    align-items: center;
+    border: 1px solid #eadfc9;
+    border-radius: 8px;
+    background: #fff;
+    text-decoration: none;
+}
+.voucher-suggest-image {
+    width: 38px;
+    height: 38px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    background: #f3f6f2;
+}
+.voucher-suggest-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.voucher-suggest-info strong {
+    display: block;
+    overflow: hidden;
+    color: #354239;
+    font-size: 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.voucher-suggest-info small {
+    display: block;
+    margin-top: 3px;
+    color: #21873c;
+    font-size: 8px;
+    font-weight: 700;
+}
+.voucher-suggest-action {
+    grid-column: 2;
+    color: #84745b;
+    font-size: 7px;
+}
+.voucher-no-suggestion {
+    grid-column: 1 / -1;
+    color: #8b7b62;
+    font-size: 8px;
+}
+.voucher-summary-line strong {
+    color: #7a857d;
+}
+.voucher-summary-line.active strong {
+    color: #21883e;
+}
+@media (max-width: 620px) {
+    .checkout-voucher-option {
+        grid-template-columns: 17px minmax(0, 1fr);
+    }
+    .voucher-condition {
+        grid-column: 2;
+        justify-self: start;
+    }
+    .voucher-suggestion-products {
+        grid-template-columns: 1fr;
+    }
+}

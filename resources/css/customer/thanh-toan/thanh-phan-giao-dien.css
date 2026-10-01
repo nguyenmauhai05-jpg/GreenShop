@@ -1,0 +1,260 @@
+#addressModal.address-modal {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 10050 !important;
+    display: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px !important;
+}
+#addressModal.address-modal.open {
+    display: flex !important;
+}
+#addressModal .address-modal-backdrop {
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba(18, 33, 23, 0.48) !important;
+    backdrop-filter: blur(2px);
+}
+#addressModal .address-modal-dialog {
+    position: relative !important;
+    z-index: 2 !important;
+    width: min(900px, calc(100vw - 40px)) !important;
+    max-height: calc(100vh - 40px) !important;
+    overflow-y: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 1px solid #e1e8e1 !important;
+    border-radius: 16px !important;
+    background: #ffffff !important;
+    box-shadow: 0 22px 70px rgba(20, 55, 30, 0.20) !important;
+}
+#addressModal .address-modal-header {
+    width: 100% !important;
+    min-height: 76px !important;
+    padding: 18px 22px !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 18px !important;
+    border-bottom: 1px solid #e8ede8 !important;
+    background: #ffffff !important;
+}
+#addressModal .address-modal-header h2 {
+    margin: 0 !important;
+    color: #17321f !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+}
+#addressModal .address-modal-header p {
+    margin: 5px 0 0 !important;
+    color: #7a867e !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+}
+#addressModal .address-modal-close {
+    width: 36px !important;
+    height: 36px !important;
+    flex: 0 0 36px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    border: 1px solid #dce4dc !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    color: #68746b !important;
+    font-size: 22px !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+}
+#addressModal .address-form {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+#addressModal .address-mode-switch {
+    width: auto !important;
+    margin: 16px 22px 0 !important;
+    padding: 4px !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 5px !important;
+    border-radius: 10px !important;
+    background: #f2f5f2 !important;
+}
+#addressModal .address-mode-button {
+    width: 100% !important;
+    min-height: 42px !important;
+    padding: 0 14px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    border: 0 !important;
+    border-radius: 8px !important;
+    background: transparent !important;
+    color: #56635a !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+}
+#addressModal .address-mode-button.active {
+    background: #ffffff !important;
+    color: #16853a !important;
+    box-shadow: 0 1px 5px rgba(31, 77, 41, .08) !important;
+}
+#addressModal .address-form-body {
+    width: 100% !important;
+    padding: 20px 22px 22px !important;
+    background: #ffffff !important;
+}
+#addressModal .address-form-grid {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+}
+#addressModal .address-location-fields {
+    margin-top: 16px !important;
+}
+#addressModal .form-group {
+    min-width: 0 !important;
+    margin: 0 !important;
+}
+#addressModal .form-group-full {
+    grid-column: 1 / -1 !important;
+}
+#addressModal .form-group label {
+    display: block !important;
+    margin: 0 0 7px !important;
+    color: #33453a !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+}
+#addressModal .form-group label span {
+    color: #d94b4b !important;
+}
+#addressModal .form-control {
+    width: 100% !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    margin: 0 !important;
+    padding: 0 12px !important;
+    border: 1px solid #dce4dc !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    color: #33453a !important;
+    font-size: 12px !important;
+    line-height: normal !important;
+    outline: none !important;
+    appearance: auto !important;
+}
+#addressModal textarea.form-control {
+    height: 92px !important;
+    min-height: 92px !important;
+    padding: 11px 12px !important;
+    resize: vertical !important;
+}
+#addressModal .form-control:focus {
+    border-color: #2d9148 !important;
+    box-shadow: 0 0 0 3px rgba(45, 145, 72, .08) !important;
+}
+#addressModal .address-default-check {
+    margin: 18px 0 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    color: #445449 !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+}
+#addressModal .address-default-check > input[type="checkbox"] {
+    position: absolute !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+#addressModal .custom-checkbox {
+    width: 19px !important;
+    height: 19px !important;
+    flex: 0 0 19px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid #cbd6cc !important;
+    border-radius: 4px !important;
+    background: #ffffff !important;
+    color: #ffffff !important;
+}
+#addressModal .address-default-check input[type="checkbox"]:checked + .custom-checkbox {
+    border-color: #238a40 !important;
+    background: #238a40 !important;
+}
+#addressModal .custom-checkbox svg {
+    width: 13px !important;
+    height: 13px !important;
+    fill: none !important;
+    stroke: currentColor !important;
+    stroke-width: 2 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+}
+#addressModal .address-modal-footer {
+    width: 100% !important;
+    padding: 14px 22px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 9px !important;
+    border-top: 1px solid #e8ede8 !important;
+    background: #ffffff !important;
+}
+#addressModal .address-modal-footer .btn {
+    min-width: 110px !important;
+    height: 40px !important;
+    padding: 0 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    border: 1px solid #dce4dc !important;
+    border-radius: 8px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+}
+#addressModal .address-modal-footer .btn-secondary {
+    background: #ffffff !important;
+    color: #4d5d52 !important;
+}
+#addressModal .address-modal-footer .btn-primary {
+    border-color: #218a3f !important;
+    background: #218a3f !important;
+    color: #ffffff !important;
+}
+#addressModal .address-modal-footer .btn svg {
+    width: 15px !important;
+    height: 15px !important;
+    fill: none !important;
+    stroke: currentColor !important;
+    stroke-width: 1.8 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+}
+@media (max-width: 700px) {
+    #addressModal.address-modal {
+        padding: 10px !important;
+    }
+    #addressModal .address-modal-dialog {
+        width: calc(100vw - 20px) !important;
+        max-height: calc(100vh - 20px) !important;
+    }
+    #addressModal .address-form-grid {
+        grid-template-columns: 1fr !important;
+    }
+    #addressModal .form-group-full {
+        grid-column: auto !important;
+    }
+}

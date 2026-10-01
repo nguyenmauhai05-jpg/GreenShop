@@ -1,0 +1,74 @@
+/* =========================================================
+   MODAL NÚT XÓA SẢN PHẨM
+========================================================= */
+.cart-modal {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(18, 33, 22, 0.42);
+    backdrop-filter: blur(2px);
+}
+.cart-modal.show {
+    display: flex;
+}
+.modal-open {
+    overflow: hidden;
+}
+.cart-modal-dialog {
+    width: min(390px, 100%);
+    padding: 32px;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+.delete-modal-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff0ef;
+    font-size: 27px;
+}
+.cart-modal-dialog h3 {
+    margin: 0;
+    color: #243128;
+    font-size: 18px;
+}
+.cart-modal-dialog p {
+    margin: 12px auto 25px;
+    color: #727d74;
+    font-size: 12px;
+    line-height: 1.55;
+}
+.cart-modal-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.cart-modal-actions form {
+    display: contents;
+}
+.modal-cancel-button, .modal-delete-button {
+    height: 42px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 700;
+}
+.modal-cancel-button {
+    border: 1px solid #dfe5de;
+    background: #ffffff;
+    color: #59655d;
+}
+.modal-delete-button {
+    border: none;
+    background: #dc3333;
+    color: #ffffff;
+}

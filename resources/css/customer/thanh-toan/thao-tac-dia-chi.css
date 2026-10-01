@@ -1,0 +1,25 @@
+/* Thanh toán: address-actions.css - tách từ layout.css, giữ nguyên quy tắc và thứ tự. */ /* =========================================================
+   CHECKOUT ADDRESS - KHÔNG LẶP ĐỊA CHỈ ĐANG CHỌN
+========================================================= */
+.checkout-address-list-row.selected {
+    display: none !important;
+}
+.address-edit-link, .address-list-edit {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    cursor: pointer;
+}
+.address-edit-link {
+    color: #17833a;
+    font-size: 9px;
+    font-weight: 700;
+}
+.address-list-edit {
+    color: #17833a;
+    font-size: 8px;
+    font-weight: 700;
+}
+.address-edit-link:hover, .address-list-edit:hover {
+    text-decoration: underline;
+}

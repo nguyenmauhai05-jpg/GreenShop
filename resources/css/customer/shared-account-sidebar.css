@@ -1,0 +1,103 @@
+/* Shared sidebar: same layout and navigation as account profile, without support card. */
+.shared-account-sidebar {
+    background:#fff;
+    border-right:1px solid #e7ebe7;
+    padding:24px 14px;
+    position:sticky;
+    top:72px;
+    align-self:start;
+    height:calc(100vh - 72px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    min-width:0
+}
+.shared-account-sidebar .sidebar-nav {
+    display:grid;
+    gap:4px
+}
+.shared-account-sidebar .sidebar-link {
+    width:100%;
+    min-height:42px;
+    padding:0 12px;
+    border:0;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    gap:11px;
+    color:#59665d;
+    background:transparent;
+    font-size:12px;
+    text-align:left;
+    text-decoration:none;
+    cursor:pointer
+}
+.shared-account-sidebar .sidebar-link svg {
+    width:18px;
+    height:18px;
+    flex:0 0 18px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.7;
+    stroke-linecap:round;
+    stroke-linejoin:round
+}
+.shared-account-sidebar .sidebar-link:hover {
+    background:#f4f8f4;
+    color:#147d35
+}
+.shared-account-sidebar .sidebar-link.active {
+    background:#eaf6ed;
+    color:#147d35;
+    font-weight:700
+}
+.shared-account-sidebar .sidebar-section-title {
+    margin:26px 12px 10px;
+    color:#a4ada6;
+    font-size:10px;
+    letter-spacing:.12em;
+    font-weight:800
+}
+.shared-account-sidebar .sidebar-logout-form {
+    margin-top:9px
+}
+.shared-account-sidebar .sidebar-link.logout {
+    color:#c64949
+}
+.shared-sidebar-toggle {
+    display:none;
+    border:1px solid #dae6dc;
+    background:#fff;
+    border-radius:8px;
+    padding:7px 11px;
+    cursor:pointer
+}
+.shared-sidebar-backdrop {
+    display:none
+}
+@media(max-width:760px) {
+    .shared-account-sidebar {
+        position:fixed;
+        z-index:300;
+        top:72px;
+        bottom:0;
+        left:0;
+        width:250px;
+        height:auto;
+        transform:translateX(-100%);
+        transition:transform .2s ease;
+        box-shadow:16px 0 40px rgba(0,0,0,.12)
+    }
+    .shared-account-sidebar.open {
+        transform:translateX(0)
+    }
+    .shared-sidebar-toggle {
+        display:inline-flex
+    }
+    .shared-sidebar-backdrop.open {
+        display:block;
+        position:fixed;
+        z-index:290;
+        inset:72px 0 0;
+        background:rgba(20,31,23,.32)
+    }
+}

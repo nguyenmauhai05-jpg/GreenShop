@@ -1,0 +1,28 @@
+GREENSHOP - SỬA ĐỊA CHỈ / VOUCHER / VẬN CHUYỂN
+
+Nguồn: GreenShop(2).zip. ZIP này tích hợp các file sửa từ bản bỏ QR thủ công trước đó và các thay đổi mới; KHÔNG gồm .env, SQL, vendor, node_modules.
+
+Thay đổi mới:
+- Fix chọn địa chỉ khác: JS trước đây lấy URL báo giá từ #shippingMap nhưng giao diện checkout không có phần tử này; hiện dùng URL route('map.shipping-quote') do Blade truyền trực tiếp. Khi chọn địa chỉ khác, hệ thống tải phí vận chuyển và cập nhật nút đặt hàng.
+- Nếu dịch vụ bản đồ không xác định được địa chỉ, nút đặt hàng vẫn được khóa vì backend cũng cần báo giá thật; nay hiển thị lỗi kèm "Thử lại" thay vì khóa im lặng. Cần sửa thông tin địa chỉ/vị trí cửa hàng khi geocoding lỗi.
+- Nút mở rộng Vận chuyển thống nhất với Voucher, Địa chỉ.
+- Thêm ô nhập mã voucher thủ công; chỉ nhận voucher đang có hiệu lực được tải từ backend. Khi đặt hàng, backend kiểm tra lại hiệu lực, hạn mức, giá trị đơn và phạm vi voucher dưới khóa giao dịch.
+- Không hiển thị "Đã áp dụng" nếu giảm 0 hoặc voucher không đủ điều kiện; hiển thị lỗi giải thích.
+- Voucher chưa đủ ngưỡng: hiển thị số tiền còn thiếu, đề xuất tối đa 4 cây còn hàng không nằm trong giỏ cùng nút Tiếp tục mua sắm.
+- Voucher phí ship đã áp dụng: hiển thị dòng trừ phí ngay dưới lựa chọn vận chuyển, đồng bộ khung tổng kết.
+- Giữ bản bỏ QR thủ công trước đó, vẫn duy trì COD, payOS và PayPal.
+
+Cách cập nhật: Giải nén ZIP vào THƯ MỤC GỐC GreenShop (cùng cấp app/, resources/, config/, routes/), ghi đè file tương ứng. Sao lưu trước khi ghi đè.
+php artisan optimize:clear
+npm install      (nếu máy chưa cài node_modules)
+npm run build    (hoặc npm run dev trong khi phát triển)
+
+Kiểm tra thực tế trên hệ thống đang chạy:
+1) Thêm/chọn địa chỉ khác có tọa độ hoặc địa chỉ tra cứu được: thấy phí ship thay đổi và nút Đặt hàng bật lại.
+2) Thử địa chỉ không hợp lệ: thấy cảnh báo và nút Thử lại, không tự dùng phí 0 giả.
+3) Nhập GREEN10 đủ điều kiện: giảm đúng và phản ánh ở Tổng thanh toán.
+4) Nhập mã không tồn tại hoặc không đủ mức tối thiểu: không được báo là đã áp dụng; mã thiếu ngưỡng hiển thị cây gợi ý.
+5) Chọn voucher vận chuyển hợp lệ: dòng giảm phí xuất hiện ngay dưới phương thức vận chuyển và trong Tổng kết.
+6) Đặt hàng: backend xác thực lại voucher, chọn phương thức vận chuyển và địa chỉ.
+
+Lưu ý: Đã kiểm tra cú pháp Node (JS) và PHP, nhưng chưa kiểm thử tích hợp thực tế trên máy của bạn với MySQL và dịch vụ bản đồ.

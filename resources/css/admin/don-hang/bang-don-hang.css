@@ -1,0 +1,145 @@
+/* =========================================================
+   Bảng danh sách đơn hàng và phân trang cơ bản
+========================================================= */
+.order-table-card {
+    background:#fff;
+    border:1px solid #e0e7e1;
+    border-radius:10px;
+    overflow:hidden
+}
+.order-table-scroll {
+    overflow:auto
+}
+.admin-order-table {
+    width:100%;
+    border-collapse:collapse;
+    min-width:1050px
+}
+.admin-order-table th {
+    background:#f7faf7;
+    color:#657169;
+    font-size:10px;
+    font-weight:600;
+    padding:11px 10px;
+    text-align:left;
+    border-bottom:1px solid #e4eae5
+}
+.admin-order-table td {
+    padding:11px 10px;
+    border-bottom:1px solid #edf1ed;
+    font-size:11px;
+    vertical-align:middle
+}
+.admin-order-table tr:hover td,.admin-order-table .selected-row td {
+    background:#fbfefb
+}
+.admin-order-table td small {
+    display:block;
+    color:#8a958d;
+    margin-top:3px
+}
+.admin-order-table .money {
+    font-weight:700;
+    color:#168b3c
+}
+.payment-method-icon {
+    margin-right:4px;
+    color:#178841
+}
+.status-badge {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:23px;
+    padding:3px 8px;
+    border-radius:20px;
+    font-size:9px;
+    font-weight:600;
+    white-space:nowrap
+}
+.badge-orange {
+    background:#fff1df;
+    color:#d47612
+}
+.badge-purple {
+    background:#f2eaff;
+    color:#7846c4
+}
+.badge-blue {
+    background:#e9f2ff;
+    color:#3577cf
+}
+.badge-green {
+    background:#e8f7ed;
+    color:#168a3b
+}
+.badge-red {
+    background:#ffeaea;
+    color:#d94c4c
+}
+.badge-gray {
+    background:#eff2f0;
+    color:#667168
+}
+.table-actions {
+    display:flex;
+    align-items:center;
+    gap:6px
+}
+.table-actions form {
+    margin:0
+}
+.btn-view,.btn-action {
+    height:27px;
+    padding:0 8px;
+    border-radius:6px;
+    border:1px solid #dde5df;
+    background:#fff;
+    display:inline-flex;
+    align-items:center;
+    font-size:9px;
+    cursor:pointer;
+    white-space:nowrap
+}
+.btn-action.green {
+    background:#168b3c;
+    color:#fff;
+    border-color:#168b3c
+}
+.btn-action.purple {
+    background:#7241c7;
+    color:#fff;
+    border-color:#7241c7
+}
+.btn-action.blue {
+    background:#3478d8;
+    color:#fff;
+    border-color:#3478d8
+}
+.empty-order-table {
+    text-align:center!important;
+    padding:32px!important;
+    color:#7b877f
+}
+.order-pagination {
+    padding:11px 13px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:10px;
+    color:#6d786f
+}
+.order-pagination nav {
+    display:flex;
+    align-items:center;
+    gap:6px
+}
+.order-pagination svg {
+    width:15px
+}
+.order-pagination .flex {
+    display:flex
+}
+.order-pagination .hidden {
+    display:none
+}

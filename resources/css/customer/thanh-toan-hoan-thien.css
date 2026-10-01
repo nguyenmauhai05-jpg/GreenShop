@@ -1,0 +1,164 @@
+/* Checkout typography and alignment; original layout/cards retained. */
+.checkout-page {
+    font-size:16px;
+    line-height:1.5;
+}
+.checkout-page .checkout-card {
+    font-size:16px;
+}
+.checkout-page .address-card {
+    display:block;
+}
+.checkout-page .address-card > .card-heading-row {
+    margin-bottom:20px;
+}
+.checkout-page .selected-address-summary {
+    min-width:0;
+}
+.checkout-page .selected-address-main strong,
+.checkout-page .voucher-main strong,
+.checkout-page .selected-voucher-summary strong,
+.checkout-page .selected-shipping-voucher-summary strong {
+    font-size:16px!important;
+    line-height:1.5;
+}
+.checkout-page .selected-address-main small,
+.checkout-page .selected-address-main span,
+.checkout-page .checkout-address-quote,
+.checkout-page .voucher-main small,
+.checkout-page .voucher-summary-desc,
+.checkout-page .checkout-voucher-option,
+.checkout-page .selected-voucher-summary small,
+.checkout-page .selected-shipping-voucher-summary small,
+.checkout-page .voucher-list-section h3 {
+    font-size:14px!important;
+    line-height:1.5;
+}
+.checkout-page .checkout-products-head {
+    font-size:14px!important;
+}
+.checkout-page .checkout-product-row,.checkout-page .checkout-product-info strong {
+    font-size:15px!important;
+}
+.checkout-page .checkout-product-info span {
+    font-size:13px!important;
+}
+.checkout-page .checkout-products-head,.checkout-page .checkout-product-row {
+    grid-template-columns:minmax(220px,1fr) 125px 145px 145px;
+    gap:12px;
+}
+.checkout-page .checkout-product-row .checkout-qty {
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:9px;
+    white-space:nowrap;
+}
+.checkout-page .checkout-qty-btn {
+    border:1px solid #bcdcc5;
+    border-radius:8px;
+    background:#f1fbf3;
+    color:#176b37;
+    font-size:21px;
+    min-width:33px;
+    height:33px;
+    cursor:pointer;
+}
+.checkout-page .checkout-qty-btn:disabled {
+    opacity:.4;
+    cursor:wait;
+}
+.checkout-page .checkout-qty-value {
+    font-size:16px;
+    font-weight:700;
+    min-width:20px;
+    text-align:center;
+}
+.checkout-page .checkout-voucher-option {
+    min-height:66px;
+}
+@media(max-width:1050px) {
+    .checkout-page .checkout-products-head,.checkout-page .checkout-product-row {
+        grid-template-columns:minmax(170px,1fr) 100px 130px 115px;
+        gap:6px;
+    }
+}
+@media(max-width:720px) {
+    .checkout-page .checkout-products-head {
+        display:none;
+    }
+    .checkout-page .checkout-product-row {
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:12px;
+    }
+    .checkout-page .checkout-product-info {
+        grid-column:1/-1;
+    }
+    .checkout-page .checkout-product-row .checkout-qty {
+        justify-content:flex-start;
+    }
+}
+/* Voucher typography: compact text without changing card dimensions/layout. */
+.checkout-page .voucher-main strong, .checkout-page .selected-voucher-summary strong, .checkout-page .selected-shipping-voucher-summary strong {
+    font-size:14px!important;
+    line-height:1.45;
+}
+.checkout-page .voucher-main small,
+.checkout-page .voucher-summary-desc,
+.checkout-page .selected-voucher-summary small,
+.checkout-page .selected-shipping-voucher-summary small {
+    font-size:12px!important;
+    line-height:1.45;
+}
+.checkout-page .checkout-voucher-option {
+    font-size:13px!important;
+}
+/* Đồng bộ cỡ chữ các khu vực thanh toán, không đổi kích thước khung. */
+.checkout-page {
+    font-size:14px;
+    line-height:1.5;
+}
+.checkout-page .checkout-kicker,
+.checkout-page .checkout-heading p,
+.checkout-page .back-link,
+.checkout-page .card-heading-row h2,
+.checkout-page .item-count,
+.checkout-page .address-name-line strong,
+.checkout-page .address-name-line span,
+.checkout-page .selected-address-main strong,
+.checkout-page .selected-address-main small,
+.checkout-page .selected-address-main span,
+.checkout-page .checkout-address-quote,
+.checkout-page .checkout-products-head,
+.checkout-page .checkout-product-row,
+.checkout-page .checkout-product-info strong,
+.checkout-page .checkout-product-info span,
+.checkout-page .payment-option strong,
+.checkout-page .payment-option small,
+.checkout-page .summary-line,
+.checkout-page .change-address {
+    font-size:14px!important;
+    line-height:1.5;
+}
+.checkout-page .card-heading-row h2,.checkout-page .summary-sticky h2 {
+    font-size:17px!important;
+}
+.checkout-page .checkout-heading h1 {
+    font-size:27px;
+}
+.checkout-page .summary-line.grand strong {
+    font-size:20px;
+}
+/* Voucher có phân cấp riêng: tên 14px, mô tả 12px, nhãn 12px. */
+.checkout-page .voucher-main strong,.checkout-page .selected-voucher-summary strong, .checkout-page .selected-shipping-voucher-summary strong {
+    font-size:14px!important;
+}
+.checkout-page .voucher-main small,
+.checkout-page .voucher-summary-desc,
+.checkout-page .selected-voucher-summary small,
+.checkout-page .selected-shipping-voucher-summary small {
+    font-size:12px!important;
+}
+.checkout-page .checkout-voucher-option {
+    font-size:13px!important;
+}

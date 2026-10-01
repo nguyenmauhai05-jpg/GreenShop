@@ -1,0 +1,95 @@
+/* Thanh toán: shipping-map.css - tách từ layout.css, giữ nguyên quy tắc và thứ tự. */ /* Bản đồ + khoảng cách giao hàng */
+.shipping-map-panel {
+    margin:0 17px 17px;
+    border:1px solid #e4ebe5;
+    border-radius:9px;
+    overflow:hidden;
+    background:#fbfdfb
+}
+.shipping-map-head {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:11px 12px;
+    border-bottom:1px solid #e7ede8
+}
+.shipping-map-head>div:first-child {
+    display:flex;
+    flex-direction:column;
+    gap:3px
+}
+.shipping-map-head strong {
+    font-size:10px;
+    color:#354239
+}
+.shipping-map-head span {
+    font-size:8px;
+    color:#8d9890
+}
+.shipping-distance {
+    font-size:13px!important;
+    font-weight:800;
+    color:var(--co-green)!important
+}
+.shipping-map {
+    height:260px;
+    background:#eef4ef;
+    z-index:0
+}
+.shipping-map-meta {
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:12px;
+    padding:9px 12px;
+    border-top:1px solid #e7ede8
+}
+.shipping-map-meta span {
+    font-size:8px;
+    line-height:1.45;
+    color:#637168
+}
+.shipping-map-meta span.error {
+    color:#b94c4c;
+    font-weight:600
+}
+.shipping-map-meta small {
+    font-size:7px;
+    color:#98a19a;
+    text-align:right;
+    white-space:nowrap
+}
+.shipping-map .leaflet-control-attribution {
+    font-size:7px
+}
+@media(max-width:640px) {
+    .shipping-map {
+        height:220px
+    }
+    .shipping-map-meta {
+        flex-direction:column
+    }
+    .shipping-map-meta small {
+        text-align:left;
+        white-space:normal
+    }
+}
+.shipping-summary-notice {
+    margin: 10px 0 4px;
+    padding: 11px 12px;
+    border-radius: 10px;
+    background: #eff8f0;
+    border: 1px solid #d9eadb;
+    display: grid;
+    gap: 4px;
+}
+.shipping-summary-notice strong {
+    color: #1d7f35;
+    font-size: 13px;
+}
+.shipping-summary-notice span {
+    color: #677269;
+    font-size: 11px;
+    line-height: 1.45;
+}

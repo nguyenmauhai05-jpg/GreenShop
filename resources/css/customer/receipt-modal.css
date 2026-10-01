@@ -1,0 +1,42 @@
+/* Hộp xác nhận nhận hàng đồng bộ với modal hủy đơn của GreenShop. */
+.receipt-modal-icon {
+    width:48px;
+    height:48px;
+    margin:0 auto 13px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:#eaf7ed;
+    color:#16833a;
+    font-size:24px;
+    font-weight:800;
+}
+.receipt-modal .cancel-dialog {
+    text-align:center;
+}
+.receipt-modal .cancel-dialog p {
+    font-size:14px;
+}
+.receipt-modal .cancel-actions {
+    align-items:stretch;
+}
+.receipt-modal .cancel-actions > button {
+    min-height:42px;
+    font-size:14px;
+}
+.receipt-submit {
+    border:1px solid #16833a;
+    background:#16833a;
+    color:white;
+    border-radius:8px;
+    padding:0 20px;
+    font-weight:700;
+    cursor:pointer;
+}
+.receipt-submit:hover {
+    background:#0f6a2d;
+}
+.receipt-submit:disabled {
+    opacity:.65;
+    cursor:wait;
+}

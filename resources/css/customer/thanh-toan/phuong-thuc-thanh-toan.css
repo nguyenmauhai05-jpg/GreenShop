@@ -1,0 +1,68 @@
+/* Thanh toán: payment.css - tách từ layout.css, giữ nguyên quy tắc và thứ tự. */
+.payment-option {
+    margin: 12px 16px;
+    padding: 13px;
+    border: 1px solid #dfe6df;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 18px 35px minmax(0,1fr) auto;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.payment-option.selected {
+    border-color: #83b98e;
+    background: #fbfefb;
+}
+.payment-option.disabled {
+    opacity: .62;
+    cursor: not-allowed;
+}
+.payment-option input {
+    position: absolute;
+    opacity: 0;
+}
+.payment-radio {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #b9c4bb;
+    border-radius: 50%;
+    position: relative;
+}
+.payment-option.selected .payment-radio::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background: var(--co-green);
+    border-radius: 50%;
+}
+.payment-icon {
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background: #edf7ef;
+    color: var(--co-green);
+    font-weight: 800;
+}
+.payment-option strong {
+    display: block;
+    font-size: 10px;
+    color: #354239;
+}
+.payment-option small {
+    display: block;
+    margin-top: 4px;
+    color: #8f9991;
+    font-size: 8px;
+    line-height: 1.45;
+}
+.payment-option em {
+    font-style: normal;
+    padding: 4px 7px;
+    border-radius: 999px;
+    background: #eff2ef;
+    color: #828c84;
+    font-size: 7px;
+}

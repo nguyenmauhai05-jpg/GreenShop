@@ -1,0 +1,741 @@
+/* =========================================================
+   BÁO CÁO THỐNG KÊ - GREENSHOP ADMIN
+========================================================= */
+.report-page {
+    padding: 28px 0 40px;
+    background: #f7f9f7;
+    min-height: calc(100vh - 70px);
+    color: #1f2937;
+}
+/* =========================================================
+   HEADING
+========================================================= */
+.report-heading {
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.report-heading h1 {
+    margin: 0 0 6px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2937;
+}
+.report-heading p {
+    margin: 0;
+    font-size: 14px;
+    color: #6b7280;
+}
+.report-heading-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.report-export-btn {
+    height: 42px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .2s ease;
+}
+.report-export-btn:hover {
+    border-color: #176b36;
+    color: #176b36;
+}
+/* =========================================================
+   ALERT
+========================================================= */
+.report-alert {
+    margin-bottom: 20px;
+    padding: 13px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.report-alert-success {
+    border: 1px solid #bbf7d0;
+    background: #ecfdf3;
+    color: #166534;
+}
+.report-alert-error {
+    border: 1px solid #fecaca;
+    background: #fef2f2;
+    color: #b91c1c;
+}
+/* =========================================================
+   FILTER
+========================================================= */
+.report-filter-card {
+    margin-bottom: 22px;
+    padding: 18px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #ffffff;
+}
+.report-filter-form {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(130px, 1fr));
+    align-items: end;
+    gap: 12px;
+}
+.report-filter-group {
+    min-width: 0;
+}
+.report-filter-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #6b7280;
+    font-size: 11px;
+    font-weight: 600;
+}
+.report-filter-group input, .report-filter-group select {
+    width: 100%;
+    height: 42px;
+    padding: 0 11px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #374151;
+    font-size: 12px;
+    outline: none;
+}
+.report-filter-group input:focus, .report-filter-group select:focus {
+    border-color: #176b36;
+    box-shadow: 0 0 0 3px rgba(23, 107, 54, .08);
+}
+.report-filter-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 2px;
+}
+.report-filter-btn, .report-reset-btn {
+    min-width: 110px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.report-filter-btn {
+    border: none;
+    background: #176b36;
+    color: #ffffff;
+}
+.report-filter-btn:hover {
+    background: #12572c;
+}
+.report-reset-btn {
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #4b5563;
+    text-decoration: none;
+}
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
+.report-summary-grid {
+    margin-bottom: 22px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+.report-summary-card {
+    min-height: 110px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #ffffff;
+}
+.report-summary-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #eaf5ed;
+    color: #176b36;
+    font-size: 20px;
+    font-weight: 700;
+}
+.report-summary-card span {
+    display: block;
+    margin-bottom: 7px;
+    color: #6b7280;
+    font-size: 12px;
+}
+.report-summary-card strong {
+    display: block;
+    color: #1f2937;
+    font-size: 23px;
+    font-weight: 700;
+}
+/* =========================================================
+   GRID
+========================================================= */
+.report-grid {
+    display: grid;
+    gap: 18px;
+}
+.report-grid-top {
+    margin-bottom: 18px;
+    grid-template-columns: minmax(0, 1.7fr) minmax(300px, .8fr);
+}
+.report-grid-bottom {
+    grid-template-columns: minmax(0, 1.6fr) minmax(300px, .8fr);
+}
+/* =========================================================
+   CARD
+========================================================= */
+.report-card {
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #ffffff;
+}
+.report-card-header {
+    padding: 18px 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+.report-card-header h2 {
+    margin: 0 0 5px;
+    color: #1f2937;
+    font-size: 17px;
+    font-weight: 700;
+}
+.report-card-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 12px;
+}
+/* =========================================================
+   REVENUE CHART
+========================================================= */
+.report-chart-card {
+    min-height: 390px;
+}
+.report-chart-wrap {
+    position: relative;
+    min-height: 315px;
+    padding: 20px;
+}
+.report-chart-wrap canvas {
+    width: 100% !important;
+    height: 290px !important;
+}
+/* =========================================================
+   CATEGORY REVENUE
+========================================================= */
+.report-category-list {
+    padding: 18px 20px;
+}
+.report-category-item {
+    padding: 14px 0;
+    border-bottom: 1px solid #eef0ee;
+}
+.report-category-item:first-child {
+    padding-top: 0;
+}
+.report-category-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.report-category-top {
+    margin-bottom: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.report-category-top > div {
+    min-width: 0;
+}
+.report-category-top > div strong {
+    display: block;
+    margin-bottom: 3px;
+    overflow: hidden;
+    color: #374151;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.report-category-top > div span {
+    color: #6b7280;
+    font-size: 11px;
+}
+.report-category-top > strong {
+    color: #176b36;
+    font-size: 13px;
+    white-space: nowrap;
+}
+.report-category-progress {
+    height: 7px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #eef2ef;
+}
+.report-category-progress span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: #218c49;
+}
+/* =========================================================
+   PRODUCT TABLE
+========================================================= */
+.report-product-card {
+    min-width: 0;
+}
+.report-table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+.report-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+}
+.report-table th {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f8faf8;
+    color: #6b7280;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.report-table td {
+    padding: 13px 14px;
+    border-bottom: 1px solid #eef0ee;
+    color: #374151;
+    font-size: 11px;
+    vertical-align: middle;
+}
+.report-table tbody tr:hover {
+    background: #fbfdfb;
+}
+.report-product-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.report-product-image {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f1f5f1;
+}
+.report-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.report-product-info strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #26352a;
+    font-size: 11px;
+}
+.report-product-info span {
+    color: #9ca3af;
+    font-size: 9px;
+}
+.report-money {
+    color: #176b36;
+    white-space: nowrap;
+}
+.report-percent {
+    display: inline-flex;
+    padding: 5px 8px;
+    border-radius: 20px;
+    background: #edf7ef;
+    color: #176b36;
+    font-size: 10px;
+    font-weight: 600;
+}
+.report-table-empty {
+    padding: 50px 20px !important;
+    text-align: center;
+    color: #9ca3af !important;
+}
+.report-table-footer {
+    min-height: 58px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: #6b7280;
+    font-size: 10px;
+}
+/* =========================================================
+   ORDER STATUS
+========================================================= */
+.report-status-list {
+    padding: 18px 20px;
+}
+.report-status-item {
+    padding: 14px 0;
+    border-bottom: 1px solid #eef0ee;
+}
+.report-status-item:first-child {
+    padding-top: 0;
+}
+.report-status-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.report-status-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.report-status-main strong {
+    display: block;
+    margin-bottom: 3px;
+    color: #374151;
+    font-size: 12px;
+}
+.report-status-main span {
+    color: #6b7280;
+    font-size: 10px;
+}
+.report-status-percent {
+    padding: 4px 8px;
+    border-radius: 20px;
+    background: #edf7ef;
+    color: #176b36 !important;
+    font-weight: 600;
+}
+.report-status-revenue {
+    margin-top: 7px;
+    color: #6b7280;
+    font-size: 10px;
+}
+.report-status-revenue strong {
+    color: #176b36;
+}
+.report-status-progress {
+    height: 6px;
+    margin-top: 9px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #eef2ef;
+}
+.report-status-progress span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: #218c49;
+}
+/* =========================================================
+   EMPTY CARD
+========================================================= */
+.report-card-empty {
+    padding: 50px 20px;
+    color: #9ca3af;
+    font-size: 12px;
+    text-align: center;
+}
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+.report-empty-state {
+    padding: 70px 30px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #ffffff;
+    text-align: center;
+}
+.report-empty-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #edf7ef;
+    color: #176b36;
+    font-size: 28px;
+}
+.report-empty-state h2 {
+    margin: 0 0 8px;
+    color: #374151;
+    font-size: 19px;
+}
+.report-empty-state p {
+    margin: 0 auto 18px;
+    max-width: 460px;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.report-empty-reset {
+    height: 40px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #176b36;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+/* =========================================================
+   LARAVEL PAGINATION
+========================================================= */
+.report-table-footer nav {
+    display: flex;
+}
+.report-table-footer svg {
+    width: 15px;
+}
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 1200px) {
+    .report-filter-form {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .report-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .report-grid-top, .report-grid-bottom {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .report-page {
+        padding: 20px 15px 30px;
+    }
+    .report-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .report-heading-actions {
+        width: 100%;
+    }
+    .report-export-btn {
+        flex: 1;
+    }
+    .report-filter-form {
+        grid-template-columns: 1fr;
+    }
+    .report-filter-actions {
+        flex-direction: column;
+    }
+    .report-filter-btn, .report-reset-btn {
+        width: 100%;
+    }
+    .report-summary-grid {
+        grid-template-columns: 1fr;
+    }
+    .report-table-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+/* =========================================================
+   BIỂU ĐỒ DOANH THU - CANVAS
+========================================================= */
+.report-chart-card {
+    min-width: 0;
+}
+.report-chart-card .report-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+.report-chart-legend {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    flex-shrink: 0;
+    padding: 7px 10px;
+    border: 1px solid #e2e8e3;
+    border-radius: 999px;
+    background: #f8fbf8;
+    color: #66746b;
+    font-size: 10px;
+    font-weight: 600;
+}
+.report-chart-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #16863c;
+}
+.report-chart-wrap {
+    min-height: 300px;
+    padding: 18px 18px 12px;
+}
+.report-chart-canvas-box {
+    position: relative;
+    width: 100%;
+    height: 290px;
+    min-width: 0;
+}
+#revenueChart {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+}
+.report-chart-tooltip {
+    position: absolute;
+    z-index: 5;
+    min-width: 122px;
+    padding: 8px 10px;
+    border: 1px solid #dce6de;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .97);
+    box-shadow: 0 8px 24px rgba(20, 60, 31, .12);
+    color: #24352a;
+    font-size: 10px;
+    line-height: 1.55;
+    pointer-events: none;
+    transform: translate(-50%, calc(-100% - 10px));
+}
+.report-chart-tooltip strong {
+    display: block;
+    color: #128239;
+    font-size: 11px;
+}
+@media (max-width: 900px) {
+    .report-chart-canvas-box {
+        height: 250px;
+    }
+}
+/* Định dạng ngày Việt Nam DD/MM/YYYY */
+.report-date-hint {
+    display: block;
+    margin-top: 5px;
+    color: #9ca3af;
+    font-size: 10px;
+}
+.report-filter-group input[data-report-date] {
+    letter-spacing: .02em;
+}
+/* =========================================================
+   REPORT FILTER - TẤT CẢ TRÊN 1 HÀNG
+   Chỉ áp dụng desktop.
+========================================================= */
+@media (min-width: 1201px) {
+    .report-filter-card {
+        padding: 14px 16px !important;
+        margin-bottom: 18px !important;
+    }
+    .report-filter-form {
+        grid-template-columns: repeat(5, minmax(135px, 1fr)) auto !important;
+        gap: 10px !important;
+        align-items: end !important;
+    }
+    .report-filter-actions {
+        grid-column: auto !important;
+        display: flex !important;
+        align-items: flex-end !important;
+        justify-content: flex-start !important;
+        gap: 8px !important;
+        margin-top: 0 !important;
+        white-space: nowrap;
+    }
+    .report-filter-group label {
+        margin-bottom: 5px !important;
+    }
+    .report-filter-group input, .report-filter-group select {
+        height: 38px !important;
+    }
+    .report-filter-btn, .report-reset-btn {
+        min-width: 92px !important;
+        height: 38px !important;
+        padding: 0 12px !important;
+    }
+}
+/* =========================================================
+   REPORT SUMMARY CARDS - GỌN HƠN, DÀI NGANG HƠN, ICON MỚI
+   Chỉ tác động 4 card tổng quan.
+========================================================= */
+.report-summary-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+    margin-bottom: 18px !important;
+}
+.report-summary-card {
+    min-height: 72px !important;
+    padding: 10px 16px !important;
+    gap: 12px !important;
+    align-items: center !important;
+}
+.report-summary-icon {
+    width: 36px !important;
+    height: 36px !important;
+    flex: 0 0 36px !important;
+    border-radius: 9px !important;
+    font-size: 0 !important;
+    position: relative;
+}
+.report-summary-icon::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.report-summary-card span {
+    margin-bottom: 2px !important;
+    font-size: 11px !important;
+    line-height: 1.15 !important;
+}
+.report-summary-card strong {
+    font-size: 21px !important;
+    line-height: 1 !important;
+}
+.report-summary-card:nth-child(1) .report-summary-icon::before {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23176b36%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%223%22%20y%3D%226%22%20width%3D%2218%22%20height%3D%2213%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M16%2010h5v5h-5a2.5%202.5%200%200%201%200-5Z%22%2F%3E%3Cpath%20d%3D%22M7%206V4h10v2%22%2F%3E%3C%2Fsvg%3E");
+}
+.report-summary-card:nth-child(2) .report-summary-icon::before {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23176b36%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%225%22%20y%3D%224%22%20width%3D%2214%22%20height%3D%2217%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M9%204V3h6v1M8%209h8M8%2013h8M8%2017h5%22%2F%3E%3C%2Fsvg%3E");
+}
+.report-summary-card:nth-child(3) .report-summary-icon::before {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23176b36%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m4%207%208-4%208%204-8%204-8-4Z%22%2F%3E%3Cpath%20d%3D%22M4%207v10l8%204%208-4V7M12%2011v10%22%2F%3E%3C%2Fsvg%3E");
+}
+.report-summary-card:nth-child(4) .report-summary-icon::before {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23176b36%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%229%22%20cy%3D%228%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%2217%22%20cy%3D%229%22%20r%3D%222.5%22%2F%3E%3Cpath%20d%3D%22M3.5%2020v-1.5A5.5%205.5%200%200%201%209%2013a5.5%205.5%200%200%201%205.5%205.5V20%22%2F%3E%3Cpath%20d%3D%22M15%2014.2a4.6%204.6%200%200%201%205.5%204.5V20%22%2F%3E%3C%2Fsvg%3E");
+}
+/* Tiêu đề trang đã hiển thị ở admin header */
+.report-heading-actions-only {
+    justify-content: flex-end;
+}

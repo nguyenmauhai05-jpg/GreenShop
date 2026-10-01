@@ -1,0 +1,9 @@
+GreenShop - Admin header/table patch
+
+1. Chép đè toàn bộ các file trong ZIP vào project hiện tại, giữ nguyên cấu trúc thư mục.
+2. Chạy:
+   npm run build
+   php artisan optimize:clear
+3. Ctrl + F5 trình duyệt.
+
+Không cần chạy SQL/migration.

@@ -1,0 +1,152 @@
+/* =========================================================
+   BENEFITS
+========================================================= */
+.benefits-section {
+    width: 100%;
+    padding: 90px 0 95px;
+    background: #f4f8f2;
+}
+.benefits-container {
+    width: min(1400px, calc(100% - 100px));
+    margin: 0 auto;
+}
+/* =========================================================
+   HEADING
+========================================================= */
+.benefits-heading {
+    max-width: 650px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+.benefits-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #2f8739;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.benefits-label span {
+    width: 22px;
+    height: 2px;
+    background: #2f8739;
+}
+.benefits-heading h2 {
+    margin: 20px 0 0;
+    /*
+       Dùng font hỗ trợ tiếng Việt tốt,
+       tránh lỗi ký tự như ở font cũ.
+    */
+    font-size: 43px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #172d1d;
+}
+.benefits-heading p {
+    margin-top: 17px;
+    color: #667269;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+/* =========================================================
+   GRID
+========================================================= */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+/* =========================================================
+   ITEM
+========================================================= */
+.benefit-item {
+    padding: 38px 28px;
+    border: 1px solid #e2e9df;
+    border-radius: 17px;
+    background: #ffffff;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.benefit-item:hover {
+    transform: translateY(-6px);
+    border-color: #c9ddc6;
+    box-shadow: 0 15px 35px rgba(36, 79, 44, 0.09);
+}
+/* =========================================================
+   ICON
+========================================================= */
+.benefit-icon {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eaf5e8;
+    color: #2f8739;
+}
+/* SVG ICON */
+.benefit-icon svg {
+    display: block;
+    width: 25px;
+    height: 25px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+/* =========================================================
+   TEXT
+========================================================= */
+.benefit-item h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #183020;
+}
+.benefit-item p {
+    margin: 13px 0 0;
+    color: #748077;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+/* =========================================================
+   TABLET
+========================================================= */
+@media (max-width: 1000px) {
+    .benefits-container {
+        width: calc(100% - 60px);
+    }
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* =========================================================
+   MOBILE
+========================================================= */
+@media (max-width: 600px) {
+    .benefits-section {
+        padding: 65px 0;
+    }
+    .benefits-container {
+        width: calc(100% - 32px);
+    }
+    .benefits-heading {
+        margin-bottom: 38px;
+    }
+    .benefits-heading h2 {
+        font-size: 34px;
+    }
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    .benefit-item {
+        padding: 30px 24px;
+    }
+}

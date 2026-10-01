@@ -1,0 +1,50 @@
+/* =========================================================
+   THÔNG BÁO NHỎ
+========================================================= */
+.cart-toast-wrapper {
+    position: fixed;
+    z-index: 10000;
+    top: 90px;
+    right: 25px;
+    width: min(390px, calc(100% - 40px));
+}
+.cart-toast {
+    min-height: 55px;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 8px 28px rgba(0,0,0,.08);
+    font-size: 12px;
+}
+.cart-toast.success {
+    border-color: #c9e8ce;
+    color: #28773a;
+    background: #f4fbf4;
+}
+.cart-toast.warning {
+    border-color: #f2d49d;
+    color: #ad6a19;
+    background: #fffaf0;
+}
+.cart-toast.error {
+    border-color: #f1c5c2;
+    color: #c5443b;
+    background: #fff6f5;
+}
+/* =========================================================
+   THÔNG BÁO NHỎ TỰ ẨN SAU 3 GIÂY
+========================================================= */
+.cart-toast {
+    transition: opacity .3s ease, transform .3s ease, visibility .3s ease;
+}
+.cart-toast.cart-toast-hide {
+    opacity: 0;
+    transform: translateY(-8px);
+    visibility: hidden;
+    pointer-events: none;
+}

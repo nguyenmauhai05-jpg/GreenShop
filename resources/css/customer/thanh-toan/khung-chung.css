@@ -1,0 +1,123 @@
+/* Thanh toán: base.css - tách từ layout.css, giữ nguyên quy tắc và thứ tự. */
+:root {
+    --co-green: #16833a;
+    --co-green-dark: #0f6b2e;
+    --co-text: #203026;
+    --co-muted: #7f8a82;
+    --co-line: #e5ebe5;
+    --co-page: #f7f9f6;
+}
+.checkout-page * {
+    box-sizing: border-box;
+}
+.checkout-page {
+    min-height: calc(100vh - 82px);
+    background: var(--co-page);
+    padding: 32px max(24px, calc((100vw - 1320px)/2)) 56px;
+    color: var(--co-text);
+}
+.checkout-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: flex-end;
+    margin-bottom: 22px;
+}
+.checkout-kicker {
+    display: block;
+    color: #95a097;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    margin-bottom: 5px;
+}
+.checkout-heading h1 {
+    margin: 0;
+    font-size: 27px;
+    letter-spacing: 0;
+}
+.checkout-heading p {
+    margin: 6px 0 0;
+    color: var(--co-muted);
+    font-size: 11px;
+}
+.back-link {
+    color: var(--co-green);
+    font-size: 10px;
+    font-weight: 700;
+}
+.checkout-alert {
+    max-width: 820px;
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    padding: 12px 13px;
+    border-radius: 8px;
+    margin-bottom: 13px;
+    border: 1px solid #ead0d0;
+    background: #fff3f3;
+    color: #b94c4c;
+    font-size: 10px;
+    line-height: 1.5;
+}
+.checkout-alert.warning {
+    border-color: #eadbb7;
+    background: #fff8e9;
+    color: #8f6b28;
+}
+.checkout-alert > span {
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-weight: 800;
+}
+.checkout-grid {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) 340px;
+    gap: 20px;
+    align-items: start;
+}
+.checkout-content {
+    display: grid;
+    gap: 15px;
+}
+.checkout-card, .summary-sticky {
+    background: #fff;
+    border: 1px solid var(--co-line);
+    border-radius: 11px;
+    box-shadow: 0 8px 28px rgba(35,62,41,.035);
+}
+.checkout-card {
+    overflow: hidden;
+}
+.card-heading-row {
+    min-height: 58px;
+    padding: 0 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #edf0ed;
+}
+.card-heading-row > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.card-heading-row h2 {
+    margin: 0;
+    font-size: 13px;
+}
+.step-number {
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #e9f6ec;
+    color: var(--co-green);
+    font-size: 9px;
+    font-weight: 800;
+}

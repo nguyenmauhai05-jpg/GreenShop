@@ -1,0 +1,334 @@
+# GreenShop FINAL - Danh sách file thay đổi
+
+> So sánh tự động với `GreenShop(4).zip`. Các thư mục môi trường/phụ thuộc như `.git`, `vendor`, `node_modules`, cache/log/build và `.env` được loại khỏi phép so sánh.
+
+- File thay đổi tại cùng đường dẫn: **92**
+- File mới: **100**
+- File không còn trong source FINAL: **99**
+- File giữ nguyên: **184**
+
+## File có thể xác định là di chuyển nguyên nội dung
+
+- `database/MOMO_README.sql` → `database/verify_momo_tables.sql`
+- `public/css/admin-cai-dat-he-thong.css` → `resources/css/admin/cai-dat-he-thong.css`
+- `public/css/admin-danh-gia.css` → `resources/css/admin/danh-gia.css`
+- `public/css/admin-don-hang.css` → `resources/css/admin/don-hang.css`
+- `public/css/so-dia-chi.css` → `resources/css/customer/so-dia-chi.css`
+- `public/js/danh-gia.js` → `resources/js/customer/danh-gia.js`
+- `public/js/don-hang.js` → `resources/js/customer/don-hang.js`
+- `public/js/thanh-toan.js` → `resources/js/customer/thanh-toan.js`
+
+## File thay đổi tại cùng đường dẫn
+
+- `.env.example`
+- `README.md`
+- `app/Http/Controllers/AIController.php`
+- `app/Http/Controllers/Admin/BaoCaoController.php`
+- `app/Http/Controllers/Admin/CaiDatHeThongController.php`
+- `app/Http/Controllers/Admin/CayCanhController.php`
+- `app/Http/Controllers/Admin/DanhGiaController.php`
+- `app/Http/Controllers/Admin/DanhMucController.php`
+- `app/Http/Controllers/Admin/DashboardController.php`
+- `app/Http/Controllers/Admin/DonHangController.php`
+- `app/Http/Controllers/Admin/VoucherController.php`
+- `app/Http/Controllers/AuthController.php`
+- `app/Http/Controllers/CuaHangController.php`
+- `app/Http/Controllers/DonHangController.php`
+- `app/Http/Controllers/GioHangController.php`
+- `app/Http/Controllers/TaiKhoanController.php`
+- `app/Http/Controllers/ThanhToanController.php`
+- `app/Http/Requests/Admin/StoreCayCanhRequest.php`
+- `app/Http/Requests/Admin/UpdateCayCanhRequest.php`
+- `app/Models/NguoiDung.php`
+- `composer.json`
+- `config/cache.php`
+- `config/database.php`
+- `config/queue.php`
+- `config/services.php`
+- `config/session.php`
+- `phpunit.xml`
+- `resources/css/admin.css`
+- `resources/css/admin/danh-muc.css`
+- `resources/css/app.css`
+- `resources/css/cham-soc-cay.css`
+- `resources/css/chi-tiet-cay.css`
+- `resources/css/cua-hang.css`
+- `resources/css/gio-hang.css`
+- `resources/css/gioi-thieu.css`
+- `resources/js/admin/bao-cao.js`
+- `resources/views/admin/bao_cao/index.blade.php`
+- `resources/views/admin/cai_dat_he_thong/index.blade.php`
+- `resources/views/admin/cay_canh/create.blade.php`
+- `resources/views/admin/cay_canh/edit.blade.php`
+- `resources/views/admin/cay_canh/index.blade.php`
+- `resources/views/admin/danh_gia/index.blade.php`
+- `resources/views/admin/danh_muc/index.blade.php`
+- `resources/views/admin/dashboard/index.blade.php`
+- `resources/views/admin/don_hang/index.blade.php`
+- `resources/views/admin/don_hang/print.blade.php`
+- `resources/views/admin/layouts/app.blade.php`
+- `resources/views/admin/layouts/sidebar.blade.php`
+- `resources/views/admin/voucher/index.blade.php`
+- `resources/views/auth/dang_ky.blade.php`
+- `resources/views/auth/dang_nhap.blade.php`
+- `resources/views/auth/dat_lai_mat_khau.blade.php`
+- `resources/views/auth/email_da_gui.blade.php`
+- `resources/views/blog/index.blade.php`
+- `resources/views/cham_soc_cay/index.blade.php`
+- `resources/views/chi_tiet_cay/components/detail-tabs.blade.php`
+- `resources/views/chi_tiet_cay/components/info.blade.php`
+- `resources/views/chi_tiet_cay/index.blade.php`
+- `resources/views/cua_hang/components/filter.blade.php`
+- `resources/views/cua_hang/index.blade.php`
+- `resources/views/danh_gia/form.blade.php`
+- `resources/views/danh_gia/index.blade.php`
+- `resources/views/don_hang/index.blade.php`
+- `resources/views/errors/403.blade.php`
+- `resources/views/errors/419.blade.php`
+- `resources/views/errors/503.blade.php`
+- `resources/views/gio_hang/index.blade.php`
+- `resources/views/gioi_thieu/index.blade.php`
+- `resources/views/layouts/password-reset.blade.php`
+- `resources/views/tai_khoan/ho_so.blade.php`
+- `resources/views/tai_khoan/so_dia_chi.blade.php`
+- `resources/views/thanh_toan/demo.blade.php`
+- `resources/views/thanh_toan/index.blade.php`
+- `resources/views/trang_chu/components/benefits.blade.php`
+- `resources/views/trang_chu/components/best-sellers.blade.php`
+- `resources/views/trang_chu/components/categories.blade.php`
+- `resources/views/trang_chu/components/footer.blade.php`
+- `resources/views/trang_chu/components/header.blade.php`
+- `resources/views/trang_chu/components/hero.blade.php`
+- `resources/views/trang_chu/components/new-arrivals.blade.php`
+- `resources/views/trang_chu/components/promotion.blade.php`
+- `resources/views/trang_chu/components/testimonials.blade.php`
+- `resources/views/trang_chu/index.blade.php`
+- `routes/admin/bao-cao.php`
+- `routes/admin/cay-canh.php`
+- `routes/admin/danh-muc.php`
+- `routes/admin/dashboard.php`
+- `routes/admin/don-hang.php`
+- `routes/admin/voucher.php`
+- `routes/console.php`
+- `routes/web.php`
+- `vite.config.js`
+
+## File mới
+
+- `app/Services/AI/AIConversationService.php`
+- `app/Services/AI/AIImageService.php`
+- `app/Services/AI/GeminiCareService.php`
+- `app/Services/AI/PlantContextService.php`
+- `app/Services/Account/AddressBookService.php`
+- `app/Services/Account/ProfileService.php`
+- `app/Services/Auth/AuthenticationService.php`
+- `app/Services/Auth/PasswordResetService.php`
+- `app/Services/Cart/CartService.php`
+- `app/Services/Categories/CategoryExportService.php`
+- `app/Services/Categories/CategoryService.php`
+- `app/Services/Checkout/CheckoutIntegrityService.php`
+- `app/Services/Checkout/CheckoutPageService.php`
+- `app/Services/Checkout/OrderCreationService.php`
+- `app/Services/Checkout/ShippingPricingService.php`
+- `app/Services/Dashboard/AdminDashboardService.php`
+- `app/Services/Orders/AdminOrderExportService.php`
+- `app/Services/Orders/AdminOrderQueryService.php`
+- `app/Services/Orders/AdminOrderWorkflowService.php`
+- `app/Services/Orders/CustomerOrderService.php`
+- `app/Services/Plants/PlantExcelExportService.php`
+- `app/Services/Plants/PlantImageService.php`
+- `app/Services/Plants/PlantManagementService.php`
+- `app/Services/Plants/PlantQueryService.php`
+- `app/Services/Reports/ReportDataService.php`
+- `app/Services/Reports/ReportExportService.php`
+- `app/Services/Reports/ReportFilterService.php`
+- `app/Services/Shop/ShopCatalogService.php`
+- `app/Services/Shop/ShopFilterService.php`
+- `database/README_MYSQL.md`
+- `database/SCHEMA_SYNC_NOTES.md`
+- `database/greenshop_required_updates.sql`
+- `database/optional_legacy_cleanup.sql`
+- `database/verify_momo_tables.sql`
+- `resources/css/admin/cai-dat-he-thong.css`
+- `resources/css/admin/danh-gia.css`
+- `resources/css/admin/don-hang.css`
+- `resources/css/admin/sidebar.css`
+- `resources/css/customer/auth-login.css`
+- `resources/css/customer/auth-register.css`
+- `resources/css/customer/blog.css`
+- `resources/css/customer/danh-gia.css`
+- `resources/css/customer/don-hang.css`
+- `resources/css/customer/ho-so.css`
+- `resources/css/customer/home.css`
+- `resources/css/customer/home/benefits.css`
+- `resources/css/customer/home/best-sellers.css`
+- `resources/css/customer/home/categories.css`
+- `resources/css/customer/home/hero.css`
+- `resources/css/customer/home/new-arrivals.css`
+- `resources/css/customer/home/promotion.css`
+- `resources/css/customer/home/testimonials.css`
+- `resources/css/customer/password-reset.css`
+- `resources/css/customer/payment-demo.css`
+- `resources/css/customer/site-shell.css`
+- `resources/css/customer/so-dia-chi.css`
+- `resources/css/customer/thanh-toan.css`
+- `resources/js/admin/cai-dat-he-thong.js`
+- `resources/js/admin/cay-canh.js`
+- `resources/js/admin/danh-muc.js`
+- `resources/js/admin/plant-form.js`
+- `resources/js/admin/voucher.js`
+- `resources/js/customer/auth-password.js`
+- `resources/js/customer/cham-soc-cay.js`
+- `resources/js/customer/chi-tiet-cay.js`
+- `resources/js/customer/cua-hang.js`
+- `resources/js/customer/danh-gia.js`
+- `resources/js/customer/don-hang.js`
+- `resources/js/customer/gio-hang.js`
+- `resources/js/customer/header.js`
+- `resources/js/customer/ho-so.js`
+- `resources/js/customer/location-utils.js`
+- `resources/js/customer/password-reset.js`
+- `resources/js/customer/so-dia-chi.js`
+- `resources/js/customer/thanh-toan.js`
+- `resources/views/admin/cay_canh/components/delete-modal.blade.php`
+- `resources/views/admin/cay_canh/components/filter.blade.php`
+- `resources/views/admin/cay_canh/components/stats.blade.php`
+- `resources/views/admin/cay_canh/components/table.blade.php`
+- `resources/views/admin/danh_muc/components/filter.blade.php`
+- `resources/views/admin/danh_muc/components/stats.blade.php`
+- `resources/views/admin/danh_muc/components/table.blade.php`
+- `resources/views/admin/dashboard/components/revenue-stock.blade.php`
+- `resources/views/admin/dashboard/components/stats.blade.php`
+- `resources/views/admin/dashboard/components/top-products-activities.blade.php`
+- `resources/views/admin/dashboard/components/topbar.blade.php`
+- `resources/views/cham_soc_cay/components/chat-panel.blade.php`
+- `resources/views/cham_soc_cay/components/sidebar.blade.php`
+- `resources/views/cua_hang/components/filter/category.blade.php`
+- `resources/views/cua_hang/components/filter/price.blade.php`
+- `resources/views/cua_hang/components/filter/size.blade.php`
+- `resources/views/cua_hang/components/filter/status.blade.php`
+- `resources/views/thanh_toan/components/address-modal.blade.php`
+- `resources/views/thanh_toan/components/address.blade.php`
+- `resources/views/thanh_toan/components/payment.blade.php`
+- `resources/views/thanh_toan/components/products.blade.php`
+- `resources/views/thanh_toan/components/shipping.blade.php`
+- `resources/views/thanh_toan/components/summary.blade.php`
+- `resources/views/thanh_toan/components/vouchers.blade.php`
+- `routes/admin/danh-gia.php`
+
+## File không còn trong source FINAL
+
+> Danh sách này bao gồm file legacy, file đã được tách/chuyển sang vị trí mới và SQL/migration cũ. Không đồng nghĩa mọi file bên dưới đều bị xóa vì “thừa”; nhiều nội dung đã được refactor sang Service/component/asset mới.
+
+- `app/Http/Controllers/Admin/BaiVietController.php`
+- `app/Http/Controllers/Admin/NguoiDungController.php`
+- `app/Http/Controllers/Admin/ThongKeController.php`
+- `app/Http/Controllers/BaiVietController.php`
+- `app/Http/Controllers/CayCanhController.php`
+- `app/Http/Controllers/DanhMucController.php`
+- `app/Http/Controllers/QRController.php`
+- `app/Http/Requests/CayCanhRequest.php`
+- `app/Http/Requests/DanhGiaRequest.php`
+- `app/Http/Requests/DatHangRequest.php`
+- `app/Models/BaiViet.php`
+- `app/Models/HinhAnhCay.php`
+- `app/Models/LichSuChatAI.php`
+- `app/Models/LienHe.php`
+- `app/Models/MaQR.php`
+- `app/Services/ShippingService.php`
+- `bootstrap/cache/packages.php`
+- `bootstrap/cache/services.php`
+- `database/.gitignore`
+- `database/MOMO_README.sql`
+- `database/UPDATE_VOUCHER_2_LOAI.sql`
+- `database/checkout_voucher_columns.sql`
+- `database/factories/UserFactory.php`
+- `database/greenshop_voucher.sql`
+- `database/migrations/0001_01_01_000000_create_users_table.php`
+- `database/migrations/0001_01_01_000001_create_cache_table.php`
+- `database/migrations/0001_01_01_000002_create_jobs_table.php`
+- `database/migrations/2026_08_10_220000_upgrade_danh_gia_table.php`
+- `database/migrations/2026_08_11_075154_add_status_and_timestamps_to_danh_muc_table.php`
+- `database/migrations/2026_08_12_220000_add_order_code_to_don_hang_table.php`
+- `database/migrations/2026_08_12_223500_add_trang_thai_nhan_hang_to_don_hang_table.php`
+- `database/migrations/2026_08_14_103100_add_order_code_to_don_hang_table.php`
+- `database/migrations/2026_08_14_104000_add_order_code_to_don_hang_table.php`
+- `database/migrations/2026_08_14_104600_repair_order_code_on_don_hang_table.php`
+- `database/migrations/2026_08_14_150000_create_giao_dich_thanh_toan_table.php`
+- `database/migrations/2026_08_14_151000_add_pending_expiry_index_to_giao_dich_thanh_toan_table.php`
+- `database/migrations/2026_08_18_155500_add_status_and_timestamps_to_danh_muc_table.php`
+- `database/migrations/2026_08_18_160500_add_admin_reply_to_danh_gia_table.php`
+- `database/migrations/2026_08_28_091500_fix_missing_columns_on_danh_muc_table.php`
+- `database/migrations/2026_08_29_000001_create_voucher_table.php`
+- `database/seeders/DatabaseSeeder.php`
+- `database/seeders/VaiTroSeeder.php`
+- `database/sql/danh_gia_nang_cap.sql`
+- `database/sql/password_reset_tokens.sql`
+- `database/sql_fix/2026_08_28_fix_admin_review_columns.sql`
+- `database/sql_fix/2026_08_28_fix_danh_muc_columns.sql`
+- `public/css/admin-cai-dat-he-thong.css`
+- `public/css/admin-danh-gia.css`
+- `public/css/admin-don-hang.css`
+- `public/css/blog.css`
+- `public/css/danh-gia.css`
+- `public/css/don-hang.css`
+- `public/css/ho-so.css`
+- `public/css/payment-demo.css`
+- `public/css/so-dia-chi.css`
+- `public/css/thanh-toan.css`
+- `public/css/vietnamese-font-fix.css`
+- `public/js/admin/bao-cao.js`
+- `public/js/danh-gia.js`
+- `public/js/don-hang.js`
+- `public/js/greenshop-customer-settings.js`
+- `public/js/ho-so.js`
+- `public/js/so-dia-chi.js`
+- `public/js/thanh-toan.js`
+- `resources/css/trang-chu.css`
+- `resources/js/app.js`
+- `resources/js/bootstrap.js`
+- `resources/views/admin/bai_viet/create.blade.php`
+- `resources/views/admin/bai_viet/edit.blade.php`
+- `resources/views/admin/bai_viet/index.blade.php`
+- `resources/views/admin/cay_canh/show.blade.php`
+- `resources/views/admin/danh_muc/danh_muc/components/modal-create.blade.php`
+- `resources/views/admin/danh_muc/danh_muc/components/modal-delete.blade.php`
+- `resources/views/admin/danh_muc/danh_muc/components/modal-edit.blade.php`
+- `resources/views/admin/danh_muc/danh_muc/index.blade.php`
+- `resources/views/admin/dashboard.blade.php`
+- `resources/views/admin/don_hang/show.blade.php`
+- `resources/views/admin/nguoi_dung/index.blade.php`
+- `resources/views/admin/nguoi_dung/show.blade.php`
+- `resources/views/admin/thong_ke/index.blade.php`
+- `resources/views/bai_viet/chi_tiet.blade.php`
+- `resources/views/bai_viet/index.blade.php`
+- `resources/views/cay_canh/chi_tiet.blade.php`
+- `resources/views/cay_canh/danh_muc.blade.php`
+- `resources/views/cay_canh/index.blade.php`
+- `resources/views/cay_canh/tim_kiem.blade.php`
+- `resources/views/cua_hang/ban_do.blade.php`
+- `resources/views/layouts/app.blade.php`
+- `resources/views/layouts/footer.blade.php`
+- `resources/views/layouts/header.blade.php`
+- `resources/views/layouts/sidebar.blade.php`
+- `resources/views/lien_he/index.blade.php`
+- `resources/views/qr/chat.blade.php`
+- `resources/views/tai_khoan/cay_da_mua.blade.php`
+- `resources/views/tai_khoan/doi_mat_khau.blade.php`
+- `resources/views/thanh_toan/thanh_cong.blade.php`
+- `resources/views/thanh_toan/that_bai.blade.php`
+- `resources/views/thong_bao/index.blade.php`
+- `resources/views/welcome.blade.php`
+
+## Cleanup không đóng gói trong bản FINAL
+
+- `.env` thật (giữ riêng trên máy người dùng, không đưa credential vào ZIP).
+- `.git/`
+- `vendor/`
+- `node_modules/`
+- `public/build/`
+- `public/hot`
+- `public/storage` symlink
+- `storage/framework/*` cache/session/view runtime
+- `storage/logs/*`
+- `.phpunit.result.cache`

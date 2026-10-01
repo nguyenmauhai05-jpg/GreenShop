@@ -1,0 +1,73 @@
+/* =========================================================
+   KHUNG TỔNG TIỀN VÀ THANH TOÁN
+========================================================= */
+.summary-card {
+    padding: 25px;
+    border: 1px solid #dfe8dd;
+    border-radius: 12px;
+    background: linear-gradient( 145deg, #ffffff, #f3faf1 );
+    box-shadow: 0 8px 28px rgba(29, 72, 39, 0.06);
+}
+.summary-card h2 {
+    margin: 0 0 23px;
+    color: #18321f;
+    font-size: 22px;
+}
+.summary-row {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: #4d5b51;
+    font-size: 13px;
+}
+.summary-row strong {
+    color: #182f1f;
+}
+.summary-subtotal {
+    color: #23873a !important;
+    font-size: 22px;
+}
+.summary-note {
+    margin: 4px 0 20px;
+    color: #879188;
+    font-size: 10px;
+}
+.checkout-button {
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 7px;
+    background: #168332;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+.checkout-button:hover:not(.disabled) {
+    background: #126e29;
+}
+.checkout-button.disabled {
+    background: #a7b1a7;
+    cursor: not-allowed;
+}
+.checkout-warning {
+    margin: 10px 0 0;
+    color: #d46928;
+    font-size: 10px;
+    text-align: center;
+}
+.secure-payment {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: #55725b;
+    font-size: 11px;
+}

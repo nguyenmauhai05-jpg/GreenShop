@@ -1,0 +1,154 @@
+/* =========================================================
+   GREENSHOP - SYSTEM TOAST
+   Thông báo dùng chung cho toàn bộ Customer + Admin.
+========================================================= */
+.gs-system-toast-region {
+    position: fixed;
+    top: 96px;
+    right: 18px;
+    z-index: 99999;
+    width: min(450px, calc(100vw - 36px));
+    display: grid;
+    gap: 10px;
+    pointer-events: none;
+}
+.gs-system-toast {
+    position: relative;
+    width: 100%;
+    min-height: 62px;
+    padding: 14px 52px 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow: hidden;
+    border: 1px solid #cfe7d5;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.98);
+    color: #405248;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.45;
+    box-shadow: 0 12px 34px rgba(28, 72, 41, 0.11);
+    backdrop-filter: blur(8px);
+    pointer-events: auto;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: gs-system-toast-in 0.22s ease forwards;
+}
+.gs-system-toast.is-leaving {
+    animation: gs-system-toast-out 0.22s ease forwards;
+}
+.gs-system-toast__icon {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #e9f7ed;
+    color: #16843b;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1;
+}
+.gs-system-toast__message {
+    min-width: 0;
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+.gs-system-toast__close {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    transform: translateY(-50%);
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #738078;
+    font: inherit;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.18s ease, color 0.18s ease;
+}
+.gs-system-toast__close:hover {
+    background: #f0f4f1;
+    color: #23382b;
+}
+.gs-system-toast__close:focus-visible {
+    outline: 2px solid #77b98a;
+    outline-offset: 2px;
+}
+.gs-system-toast--error {
+    border-color: #f0cccc;
+}
+.gs-system-toast--error .gs-system-toast__icon {
+    background: #fff0f0;
+    color: #c44747;
+}
+.gs-system-toast--warning {
+    border-color: #f0ddb1;
+}
+.gs-system-toast--warning .gs-system-toast__icon {
+    background: #fff7df;
+    color: #b97708;
+}
+.gs-system-toast--info {
+    border-color: #cbdfee;
+}
+.gs-system-toast--info .gs-system-toast__icon {
+    background: #edf6fc;
+    color: #2777aa;
+}
+.gs-system-toast__progress {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: currentColor;
+    opacity: 0.18;
+    transform-origin: left center;
+    animation: gs-system-toast-progress var(--gs-toast-duration, 3000ms) linear forwards;
+}
+@keyframes gs-system-toast-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes gs-system-toast-out {
+    to {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
+@keyframes gs-system-toast-progress {
+    to {
+        transform: scaleX(0);
+    }
+}
+@media (max-width: 600px) {
+    .gs-system-toast-region {
+        top: 82px;
+        right: 12px;
+        width: calc(100vw - 24px);
+    }
+    .gs-system-toast {
+        min-height: 58px;
+        padding: 12px 46px 12px 14px;
+        font-size: 14px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .gs-system-toast, .gs-system-toast.is-leaving, .gs-system-toast__progress {
+        animation-duration: 0.01ms !important;
+    }
+}

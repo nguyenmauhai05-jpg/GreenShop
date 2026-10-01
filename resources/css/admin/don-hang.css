@@ -1,0 +1,13 @@
+/* =========================================================
+   QUẢN LÝ ĐƠN HÀNG ADMIN - FILE TỔNG
+   CSS được tách theo từng khu vực để dễ học và dễ chỉnh sửa.
+   Giữ nguyên thứ tự import để không làm thay đổi giao diện.
+========================================================= */
+@import url('./don-hang/khung-trang-va-thong-bao.css');
+@import url('./don-hang/thong-ke.css');
+@import url('./don-hang/bo-loc.css');
+@import url('./don-hang/quy-trinh-trang-thai.css');
+@import url('./don-hang/bang-don-hang.css');
+@import url('./don-hang/chi-tiet-don-hang.css');
+@import url('./don-hang/thich-ung-man-hinh.css');
+@import url('./don-hang/dieu-chinh-giao-dien.css');

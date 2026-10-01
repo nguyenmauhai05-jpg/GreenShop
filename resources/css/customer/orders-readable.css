@@ -1,0 +1,26 @@
+/* Chỉ tăng độ dễ đọc của giao diện đơn hàng khách hàng. */
+.orders-shell {
+    font-size:15px;
+    line-height:1.55;
+}
+.orders-shell .order-side-link,
+.orders-shell .order-side-title,
+.orders-shell .support-box strong,
+.orders-shell .support-box p,
+.orders-shell .support-box a,
+.orders-shell .orders-list-heading p,
+.orders-shell .orders-alert,
+.orders-shell .order-search-box input,
+.orders-shell .filter-button,
+.orders-shell .status-tab,
+.orders-shell .order-card-top strong,
+.orders-shell .order-card-meta,
+.orders-shell .order-card-bottom {
+    font-size:15px;
+}
+.orders-shell .orders-list-heading h1 {
+    font-size:26px;
+}
+.orders-shell .order-card {
+    min-height:96px;
+}

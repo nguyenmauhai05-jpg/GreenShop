@@ -1,0 +1,63 @@
+/* =========================================================
+   Quy trình và ghi chú trạng thái
+========================================================= */
+.workflow-cards {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:12px
+}
+.workflow-card {
+    background:#fff;
+    border:1px solid;
+    border-radius:10px;
+    padding:12px 14px
+}
+.workflow-card.cod {
+    border-color:#cce8d3;
+    background:#fbfffc
+}
+.workflow-card.bank {
+    border-color:#ded0f5;
+    background:#fdfbff
+}
+.workflow-title {
+    font-weight:700;
+    font-size:12px;
+    margin-bottom:10px
+}
+.workflow-card.cod .workflow-title {
+    color:#218541
+}
+.workflow-card.bank .workflow-title {
+    color:#7652b9
+}
+.workflow-steps {
+    display:flex;
+    align-items:center;
+    gap:6px;
+    flex-wrap:wrap
+}
+.workflow-steps span {
+    font-size:9px;
+    padding:5px 7px;
+    border:1px solid #dfe6e0;
+    background:#fff;
+    border-radius:14px
+}
+.workflow-steps i {
+    font-style:normal;
+    color:#99a39b
+}
+.order-note {
+    display:flex;
+    gap:8px;
+    align-items:flex-start;
+    padding:10px 12px;
+    border:1px solid #dde7df;
+    background:#fff;
+    border-radius:9px;
+    margin-bottom:12px;
+    font-size:11px;
+    color:#667168
+}

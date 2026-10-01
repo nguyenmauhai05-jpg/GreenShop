@@ -1,0 +1,56 @@
+/* Thanh toán: address-main.css - tách từ layout.css, giữ nguyên quy tắc và thứ tự. */
+.change-address {
+    height: 31px;
+    padding: 0 11px;
+    border: 1px solid #bcd6c1;
+    border-radius: 6px;
+    background: #fff;
+    color: var(--co-green);
+    font-size: 9px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.item-count {
+    color: #8f9991;
+    font-size: 9px;
+}
+.address-view {
+    padding: 17px;
+}
+.address-name-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 7px;
+}
+.address-name-line strong {
+    font-size: 11px;
+}
+.address-name-line span {
+    padding: 3px 7px;
+    border-radius: 999px;
+    background: #eaf7ed;
+    color: var(--co-green);
+    font-size: 7px;
+}
+.address-view p {
+    margin: 4px 0;
+    color: #6e7a71;
+    font-size: 9px;
+    line-height: 1.5;
+}
+.missing-address {
+    padding: 18px;
+    color: #7f8981;
+    font-size: 10px;
+}
+.missing-address strong {
+    color: #b15050;
+}
+.missing-address p {
+    margin: 5px 0 9px;
+}
+.missing-address a {
+    color: var(--co-green);
+    font-weight: 700;
+}

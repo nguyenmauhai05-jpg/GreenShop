@@ -1,0 +1,636 @@
+/* =========================================================
+   CHECKOUT - ĐÃ BỎ KHỐI MAP KHOẢNG CÁCH
+========================================================= */
+.shipping-map-panel {
+    display: none !important;
+}
+.momo-payment-icon {
+    background: #fff0f6 !important;
+    color: #a50064 !important;
+    font-weight: 900 !important;
+}
+/* ===== PHƯƠNG THỨC VẬN CHUYỂN ===== */
+.shipping-method-heading {
+    align-items:center
+}
+.shipping-view-all {
+    color:#667068;
+    font-size:13px;
+    font-weight:600
+}
+.shipping-method-options {
+    display:grid;
+    gap:12px;
+    margin-top:14px
+}
+.shipping-method-option {
+    position:relative;
+    width:100%;
+    min-height:92px;
+    padding:17px 18px;
+    border:1px solid #dfe5df;
+    border-radius:12px;
+    background:#fff;
+    display:grid;
+    grid-template-columns:34px 1fr auto;
+    align-items:center;
+    gap:12px;
+    text-align:left;
+    cursor:pointer;
+    overflow:hidden;
+    transition:.18s ease
+}
+.shipping-method-option:hover {
+    border-color:#8fc5a5;
+    background:#fbfefc
+}
+.shipping-method-option.selected {
+    border-color:#2b9a62;
+    background:#f8fcfa;
+    box-shadow:0 0 0 1px rgba(43,154,98,.08)
+}
+.shipping-selected-corner {
+    display:none;
+    position:absolute;
+    left:0;
+    top:0;
+    width:28px;
+    height:28px;
+    background:#2b9a62;
+    color:#fff;
+    clip-path:polygon(0 0,100% 0,0 100%);
+    font-size:12px;
+    padding:3px 0 0 4px
+}
+.shipping-method-option.selected .shipping-selected-corner {
+    display:block
+}
+.shipping-method-icon {
+    font-size:25px;
+    color:#269965;
+    font-weight:900
+}
+.shipping-method-main {
+    display:flex;
+    flex-direction:column;
+    gap:5px
+}
+.shipping-method-main strong {
+    font-size:16px;
+    color:#25342b
+}
+.shipping-method-main small {
+    font-size:13px;
+    color:#707a73
+}
+.shipping-method-price {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    white-space:nowrap
+}
+.shipping-method-price del {
+    color:#a9afab;
+    font-size:13px
+}
+.shipping-method-price strong {
+    color:#269965;
+    font-size:16px
+}
+.shipping-method-price.express strong {
+    color:#27332b
+}
+.shipping-rule-note {
+    margin:10px 2px 0;
+    color:#778078;
+    font-size:12px;
+    line-height:1.55
+}
+@media(max-width:700px) {
+    .shipping-method-option {
+        grid-template-columns:28px 1fr;
+        padding:15px
+    }
+    .shipping-method-price {
+        grid-column:2;
+        justify-content:flex-start
+    }
+    .shipping-method-heading .shipping-view-all {
+        display:none
+    }
+}
+/* Vận chuyển compact */
+.shipping-card-compact .card-heading-row {
+    padding-top:11px;
+    padding-bottom:7px
+}
+.shipping-card-compact .shipping-method-options.compact {
+    margin:0 14px 7px;
+    gap:6px
+}
+.shipping-card-compact .shipping-method-option {
+    width:86%;
+    min-height:48px;
+    padding:7px 10px 7px 12px;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:8px;
+    border-radius:8px
+}
+.shipping-card-compact .shipping-method-main {
+    gap:1px
+}
+.shipping-card-compact .shipping-method-main strong {
+    font-size:10px
+}
+.shipping-card-compact .shipping-method-main small {
+    font-size:7.5px
+}
+.shipping-card-compact .shipping-method-price strong {
+    font-size:10px
+}
+.shipping-card-compact .shipping-selected-corner {
+    width:18px;
+    height:18px;
+    font-size:7px;
+    padding:2px 0 0 3px
+}
+.shipping-view-all {
+    border:0;
+    background:transparent;
+    padding:3px 0;
+    color:#667068;
+    font-size:8.5px;
+    font-weight:700;
+    cursor:pointer
+}
+.shipping-more-options {
+    display:grid;
+    gap:6px
+}
+.shipping-more-options[hidden] {
+    display:none!important
+}
+.shipping-rule-mini {
+    margin:0 14px 7px;
+    padding:5px 7px;
+    border-radius:7px;
+    background:#f7faf7;
+    display:grid;
+    gap:2px
+}
+.shipping-rule-mini span {
+    font-size:7px;
+    line-height:1.35;
+    color:#748078
+}
+.shipping-voucher-strip {
+    width:86%;
+    margin:0 14px 10px;
+    min-height:36px;
+    padding:6px 8px;
+    border:1px dashed #d8e4da;
+    border-radius:8px;
+    background:#fbfdfb;
+    display:grid;
+    grid-template-columns:22px minmax(0,1fr);
+    gap:6px;
+    align-items:center
+}
+.shipping-voucher-strip.active {
+    border-color:#8cc89b;
+    background:#f2faf4
+}
+.shipping-voucher-icon {
+    width:22px;
+    height:22px;
+    display:grid;
+    place-items:center;
+    border-radius:6px;
+    background:#eaf6ed;
+    font-size:11px
+}
+.shipping-voucher-main {
+    display:grid;
+    gap:1px
+}
+.shipping-voucher-main strong {
+    font-size:8px;
+    color:#2a4932
+}
+.shipping-voucher-main small {
+    font-size:7px;
+    color:#758078;
+    line-height:1.3
+}
+.shipping-voucher-summary-line {
+    display:none
+}
+.shipping-voucher-summary-line.active {
+    display:flex
+}
+@media(max-width:700px) {
+    .shipping-card-compact .shipping-method-option,.shipping-voucher-strip {
+        width:calc(100% - 28px)
+    }
+}
+/* FINAL: thanh vận chuyển cùng kích thước thanh voucher */
+.shipping-card-compact .shipping-method-options.compact {
+    margin:0 20px 16px;
+    gap:10px
+}
+.shipping-card-compact .shipping-method-option {
+    width:100%;
+    min-height:68px;
+    padding:12px 18px;
+    border-radius:12px;
+    grid-template-columns:minmax(0,1fr) auto
+}
+.shipping-card-compact .shipping-method-main strong {
+    font-size:13px
+}
+.shipping-card-compact .shipping-method-main small {
+    font-size:10px
+}
+.shipping-card-compact .shipping-method-price strong {
+    font-size:13px
+}
+.shipping-card-compact .shipping-selected-corner {
+    width:27px;
+    height:27px;
+    font-size:10px
+}
+.shipping-rule-mini,.shipping-voucher-strip {
+    display:none!important
+}
+.shipping-view-all {
+    width:42px;
+    height:42px;
+    border:1px solid #dbe5dc!important;
+    border-radius:10px!important;
+    font-size:0!important
+}
+.shipping-view-all::after {
+    content:'›';
+    font-size:25px;
+    line-height:1;
+    color:#138a3d
+}
+.shipping-view-all[aria-expanded="true"]::after {
+    content:'‹'
+}
+.voucher-type-summaries {
+    display:grid;
+    gap:10px;
+    padding:16px 20px
+}
+.voucher-type-summaries .selected-voucher-summary {
+    margin:0
+}
+.voucher-type-label {
+    font-weight:700;
+    color:#138a3d
+}
+.voucher-two-types {
+    display:grid;
+    gap:18px
+}
+.voucher-list-section {
+    display:grid;
+    gap:8px
+}
+.voucher-list-section h3 {
+    margin:0 0 3px;
+    font-size:13px;
+    color:#25352b
+}
+.shipping-voucher-summary .selected-voucher-icon {
+    font-size:15px
+}
+.shipping-rule-mini,.shipping-voucher-strip {
+    display:none!important
+}
+/* Checkout refinements: manual code, conditional upsell, inline shipping voucher, reliable expanders. */
+.checkout-voucher-entry {
+    margin:0 20px 14px;
+    padding:13px 15px;
+    border:1px solid #dce9e0;
+    border-radius:12px;
+    background:#fbfefc
+}
+.checkout-voucher-entry label {
+    display:block;
+    margin-bottom:8px;
+    font-size:13px;
+    font-weight:700;
+    color:#274635
+}
+.checkout-voucher-entry-row {
+    display:flex;
+    gap:10px
+}
+.checkout-voucher-entry-row input {
+    flex:1;
+    min-width:0;
+    padding:11px 13px;
+    font-size:14px;
+    border:1px solid #cbdccc;
+    border-radius:9px;
+    outline-color:#16833d
+}
+.checkout-voucher-entry-row button {
+    padding:10px 19px;
+    font-size:13px;
+    font-weight:700;
+    color:#fff;
+    background:#16833d;
+    border:0;
+    border-radius:9px;
+    cursor:pointer
+}
+.checkout-voucher-feedback {
+    margin:8px 0 0;
+    min-height:1em;
+    font-size:12px
+}
+.checkout-voucher-feedback.error {
+    color:#b34c27
+}
+.checkout-voucher-feedback.success {
+    color:#167b39
+}
+.voucher-continue-shopping {
+    display:inline-flex;
+    margin-top:12px;
+    padding:10px 13px;
+    border-radius:8px;
+    background:#16833d;
+    color:white;
+    font-size:13px;
+    font-weight:700;
+    text-decoration:none
+}
+.voucher-suggestion-box {
+    margin:0 20px 16px;
+    padding:16px
+}
+.voucher-suggestion-products {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px
+}
+.voucher-suggest-product {
+    grid-template-columns:64px minmax(0,1fr);
+    padding:10px
+}
+.voucher-suggest-image {
+    width:64px;
+    height:64px
+}
+.voucher-suggest-info strong {
+    font-size:12px
+}
+.voucher-suggest-info small {
+    font-size:12px
+}
+.voucher-suggest-action {
+    font-size:11px
+}
+.shipping-applied-discount {
+    margin:0 20px 17px;
+    padding:11px 14px;
+    border:1px solid #9ac7a3;
+    border-radius:9px;
+    background:#f2faf4;
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    font-size:13px;
+    color:#247c3c
+}
+.shipping-applied-discount[hidden],.auto-applied-badge[hidden],.voucher-suggestion-box[hidden] {
+    display:none!important
+}
+.checkout-address-quote {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:0 20px 12px;
+    font-size:12px;
+    color:#386c4b
+}
+#retryShippingQuote {
+    flex-shrink:0;
+    padding:5px 12px;
+    border:1px solid #a7c9b1;
+    border-radius:7px;
+    background:white;
+    color:#176e39;
+    cursor:pointer
+}
+#retryShippingQuote[hidden] {
+    display:none!important
+}
+/* Shipping uses precisely the same selector-toggle styling as Voucher and Address. */
+#shippingViewAll {
+    width:34px;
+    height:34px;
+    font-size:25px!important;
+    line-height:1;
+    border:1px solid #d9e4da!important;
+    border-radius:8px!important;
+    background:#fff!important;
+    color:#278a42;
+    transform:none
+}
+#shippingViewAll::after {
+    content:none!important
+}
+#shippingViewAll.open {
+    transform:rotate(90deg);
+    background:#f1f8f3!important
+}
+@media(max-width:620px) {
+    .checkout-voucher-entry-row {
+        flex-direction:column
+    }
+    .voucher-suggestion-products {
+        grid-template-columns:1fr
+    }
+}
+/* Display an applied shipping voucher inside the selected shipping method card. */
+.shipping-method-option .shipping-method-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 3px;
+    white-space: normal;
+    text-align: right;
+}
+.shipping-method-option .shipping-original-price {
+    font-size: 12px;
+    font-weight: 400;
+    color: #89958c;
+    text-decoration: line-through;
+}
+.shipping-method-option .shipping-method-price.has-shipping-discount strong, .shipping-method-option .shipping-method-price.express.has-shipping-discount strong {
+    color: #16833d;
+    font-size: 15px;
+}
+.shipping-method-option .shipping-discount-note {
+    font-size: 11px;
+    line-height: 1.3;
+    color: #16833d;
+}
+.shipping-method-option .shipping-method-price [hidden] {
+    display: none !important;
+}
+@media (max-width: 700px) {
+    .shipping-method-option .shipping-method-price {
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+/* Gợi ý cây liên quan: thêm ngay vào đơn hàng, giữ thiết kế card hiện có. */
+.voucher-suggest-product {
+    grid-template-columns: 72px minmax(0,1fr);
+    text-decoration: none;
+}
+.voucher-suggest-image {
+    width: 72px;
+    height: 72px;
+}
+.voucher-suggest-info {
+    min-width: 0;
+    display: grid;
+    align-content: center;
+    gap: 6px;
+}
+.voucher-suggest-info strong {
+    font-size: 13px;
+}
+.voucher-suggest-info small {
+    margin: 0;
+    font-size: 13px;
+}
+.voucher-suggest-add {
+    justify-self: start;
+    border: 1px solid #21873c;
+    background: #168039;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.voucher-suggest-add:hover {
+    background: #126b30;
+}
+.voucher-suggest-add:disabled {
+    opacity: .65;
+    cursor: wait;
+}
+.checkout-cart-feedback {
+    margin: 0 16px 12px;
+    font-size: 12px;
+}
+.checkout-cart-feedback:empty {
+    display: none;
+}
+.checkout-cart-feedback.success {
+    color: #187b34;
+}
+.checkout-cart-feedback.error {
+    color: #ae3434;
+}
+@media(max-width:620px) {
+    .voucher-suggest-product {
+        grid-template-columns:64px minmax(0,1fr)
+    }
+    .voucher-suggest-image {
+        width:64px;
+        height:64px
+    }
+}
+/* Link xem chi tiết và nút thêm ngay của cây được đề xuất. */
+.voucher-suggestion-title {
+    margin: 0 0 12px;
+    color: #35503b;
+    font-size: 14px;
+    font-weight: 700;
+}
+.voucher-suggest-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+}
+.voucher-suggest-detail {
+    color: #816f55;
+    font-size: 12px;
+    text-decoration: none;
+}
+.voucher-suggest-detail:hover, .voucher-suggest-detail:focus-visible {
+    color: #156c35;
+    text-decoration: underline;
+}
+/* Nút đóng khung gợi ý cây khi voucher chưa đạt điều kiện. */
+.voucher-suggestion-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.voucher-suggestion-header .voucher-suggestion-title {
+    margin: 0;
+}
+.voucher-suggestion-close {
+    flex: 0 0 auto;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e9d9bc;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #6b6354;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+.voucher-suggestion-close:hover, .voucher-suggestion-close:focus-visible {
+    color: #a02e22;
+    border-color: #c9867c;
+    outline-offset: 2px;
+}
+/* Checkout typography: keep existing card dimensions; restore consistent readable sizes. */
+.checkout-card .card-heading-row h2 {
+    font-size: 17px;
+}
+.voucher-checkout-card .voucher-type-label {
+    font-size: 13px;
+}
+.voucher-checkout-card .selected-voucher-main strong {
+    font-size: 14px;
+    line-height: 1.45;
+}
+.voucher-checkout-card .selected-voucher-main small:not(.voucher-type-label) {
+    font-size: 12px;
+    line-height: 1.5;
+}
+.voucher-checkout-card .auto-applied-badge {
+    font-size: 12px;
+}
+.voucher-checkout-card .voucher-main strong {
+    font-size: 14px;
+    line-height: 1.4;
+}
+.voucher-checkout-card .voucher-main small {
+    font-size: 12px;
+    line-height: 1.5;
+}
+.voucher-checkout-card .voucher-list-section h3 {
+    font-size: 14px;
+}

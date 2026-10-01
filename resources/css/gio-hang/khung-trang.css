@@ -1,0 +1,65 @@
+/* =========================================================
+   TOÀN BỘ TRANG GIỎ HÀNG
+========================================================= */
+.cart-page {
+    min-height: 70vh;
+    padding: 55px 0 90px;
+    background: #fbfcfa;
+}
+.cart-container {
+    width: min(1450px, calc(100% - 80px));
+    margin: 0 auto;
+}
+/* =========================================================
+   TIÊU ĐỀ GIỎ HÀNG
+========================================================= */
+.cart-heading {
+    margin-bottom: 20px;
+}
+.cart-heading h1 {
+    margin: 0;
+    color: #173020;
+    font-size: 31px;
+}
+.cart-heading h1 span {
+    margin-left: 8px;
+    color: #68736b;
+    font-size: 14px;
+    font-weight: 400;
+}
+/* =========================================================
+   THÔNG BÁO LƯU GIỎ HÀNG
+========================================================= */
+.cart-save-notice {
+    min-height: 48px;
+    margin-bottom: 22px;
+    padding: 0 17px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #dce9dc;
+    border-radius: 8px;
+    background: #f0f8ef;
+    color: #3f6d48;
+    font-size: 13px;
+}
+.cart-save-icon {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #3b9350;
+    color: #ffffff;
+    font-size: 11px;
+}
+/* =========================================================
+   BỐ CỤC CHÍNH
+========================================================= */
+.cart-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 380px;
+    gap: 26px;
+    align-items: start;
+}

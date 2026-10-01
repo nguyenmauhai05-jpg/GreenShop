@@ -1,0 +1,83 @@
+/* =========================================================
+   Bố cục và các thẻ thống kê
+========================================================= */
+.order-admin-layout {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 350px;
+    gap:18px;
+    align-items:start
+}
+.order-main-column {
+    min-width:0
+}
+.order-stat-grid {
+    display:grid;
+    grid-template-columns:repeat(8,minmax(105px,1fr));
+    gap:10px;
+    margin-bottom:16px
+}
+.order-stat-card {
+    min-height:86px;
+    border:1px solid #e3e9e4;
+    border-radius:10px;
+    background:#fff;
+    padding:12px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    transition:.2s
+}
+.order-stat-card:hover,.order-stat-card.active {
+    border-color:#8bc99b;
+    box-shadow:0 5px 16px rgba(26,113,51,.08)
+}
+.stat-icon {
+    width:36px;
+    height:36px;
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    flex:0 0 36px
+}
+.stat-icon.blue {
+    background:#eef5ff;
+    color:#3478d8
+}
+.stat-icon.orange {
+    background:#fff3e7;
+    color:#e48924
+}
+.stat-icon.purple,.stat-icon.violet {
+    background:#f5efff;
+    color:#8656d8
+}
+.stat-icon.green {
+    background:#eaf8ef;
+    color:#1d9a49
+}
+.stat-icon.red {
+    background:#fff0f0;
+    color:#dc4a4a
+}
+.order-stat-card div {
+    min-width:0;
+    display:flex;
+    flex-direction:column
+}
+.order-stat-card small {
+    font-size:10px;
+    color:#778279;
+    line-height:1.25;
+    min-height:25px
+}
+.order-stat-card strong {
+    font-size:20px;
+    color:#213029;
+    margin-top:2px
+}
+.order-stat-card span:last-child {
+    font-size:10px;
+    color:#9aa39c
+}

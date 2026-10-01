@@ -1,0 +1,62 @@
+/* =========================================================
+   GIAO DIỆN TƯƠNG THÍCH MÀN HÌNH
+========================================================= */
+@media (max-width: 1100px) {
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+    .cart-summary {
+        max-width: 500px;
+        margin-left: auto;
+    }
+}
+@media (max-width: 850px) {
+    .cart-container {
+        width: calc(100% - 32px);
+    }
+    .cart-table-header {
+        display: none;
+    }
+    .cart-item {
+        grid-template-columns: 1fr auto;
+        gap: 15px;
+    }
+    .cart-product {
+        grid-column: 1 / -1;
+    }
+    .cart-unit-price {
+        color: #28863b;
+        font-size: 17px;
+    }
+    .cart-quantity {
+        justify-self: end;
+    }
+    .cart-line-total {
+        display: none;
+    }
+    .cart-actions {
+        position: absolute;
+    }
+    .cart-item {
+        position: relative;
+    }
+    .cart-actions {
+        top: 15px;
+        right: 14px;
+    }
+}
+@media (max-width: 550px) {
+    .cart-page {
+        padding: 30px 0 60px;
+    }
+    .cart-heading h1 {
+        font-size: 24px;
+    }
+    .cart-product-image {
+        width: 90px;
+        height: 90px;
+    }
+    .summary-card {
+        padding: 20px;
+    }
+}
